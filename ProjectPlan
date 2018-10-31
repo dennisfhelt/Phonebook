@@ -1,0 +1,23 @@
+#Parts needed for project:
+
+Database 
+  Tables: phone numbers, users, roles
+Dao
+  Entities: phone number, user
+Tests
+  DaoTests
+  Test Database
+  SQL Dump
+JSP & servlets
+  Home page
+  Login / signup
+  edit number page
+  admin page
+Use from Indie prjt:
+  context.xml
+  web.xml
+  log4j
+  hibernate
+AWS
+  pick one account to deploy to.
+  add admin & authenticate
