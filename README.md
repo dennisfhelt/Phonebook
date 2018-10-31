@@ -1,5 +1,5 @@
 # Phonebook
-shows phone numbers of family and friends
+Shows phone numbers of family and friends!
 
 Keeping track all information in our daily live is a chore. It would be nice if we could get phone numbers and addresses in one place. In order to do that we need to allow users to update their info, while keeping others from updating other users' information with their ideas of it. Also, we might need an administrator to enter information for those who are unwilling or unable to enter it themselves. 
 
