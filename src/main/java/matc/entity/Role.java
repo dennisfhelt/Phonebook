@@ -15,21 +15,21 @@ import java.util.Objects;
 public class Role {
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    //@GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @Column(name = "role_name")
+    //@Column(name = "role_name")
     private String name;
 
-    @Column(name = "user_name")
+    //@Column(name = "user_name")
     private String userName;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id",
-            foreignKey = @ForeignKey(name = "role_user_id_fk")
-    )
+    //@ManyToOne
+    //@JoinColumn(name = "user_id",
+    //        foreignKey = @ForeignKey(name = "role_user_id_fk")
+    //)
     private User user;
 
     /**

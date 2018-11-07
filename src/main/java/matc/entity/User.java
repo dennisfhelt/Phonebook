@@ -15,8 +15,8 @@ import java.util.Set;
  *
  * @author lclemens
  */
-@Entity(name ="User")
-@Table(name = "user")
+//@Entity(name ="User")
+//@Table(name = "user")
 public class User {
     @Column(name = "first_name")
     private String firstName;
@@ -27,16 +27,13 @@ public class User {
     @Column(name = "user_name")
     private String userName;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    //@GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Workout> workouts = new HashSet<>();
+    //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<PhoneNumber> numbers = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -56,7 +53,6 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.dateOfBirth = dateOfBirth;
     }
 
 
@@ -132,55 +128,6 @@ public class User {
         this.id = id;
     }
 
-    /**
-     * Gets date of birth.
-     *
-     * @return the date of birth
-     */
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    /**
-     * Sets date of birth.
-     *
-     * @param dateOfBirth the date of birth
-     */
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    /**
-     * Gets workouts.
-     *
-     * @return the workouts
-     */
-    public Set<Workout> getWorkouts() {
-        return workouts;
-    }
-
-    /**
-     * Sets workouts.
-     *
-     * @param workouts the workouts
-     */
-    public void setWorkouts(Set<Workout> workouts) {
-        this.workouts = workouts;
-    }
-
-    public int getAge() {
-        return (int)ChronoUnit.YEARS.between(dateOfBirth, LocalDate.now());
-    }
-
-    public void addWorkout(Workout workout) {
-        workouts.add(workout);
-        workout.setUser(this);
-    }
-
-    public void removeWorkout(Workout workout) {
-        workouts.remove(workout);
-        workout.setUser(null);
-    }
 
     @Override
     public String toString() {
@@ -189,8 +136,6 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", userName='" + userName + '\'' +
                 ", id='" + id + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", age='" + getAge() +
                 '}';
     }
 
@@ -202,12 +147,11 @@ public class User {
         return id == user.id &&
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
-                Objects.equals(userName, user.userName) &&
-                Objects.equals(dateOfBirth, user.dateOfBirth);
+                Objects.equals(userName, user.userName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, userName, id, dateOfBirth);
+        return Objects.hash(firstName, lastName, userName, id);
     }
 }
