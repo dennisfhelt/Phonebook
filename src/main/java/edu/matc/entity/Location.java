@@ -7,11 +7,11 @@ import org.hibernate.annotations.GenericGenerator;
 import java.util.Objects;
 
 /**
- * Represents a Phonebook entry
+ * Represents a Location entry
  */
-@Entity(name = "Phonebook")
+@Entity(name = "Location")
 @Table(name = "phonebook")
-public class Phonebook {
+public class Location {
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "first_name")
@@ -31,14 +31,14 @@ public class Phonebook {
     private String statePostal;
 
     /**
-     * Instantiates a new Phonebook.
+     * Instantiates a new Location.
      */
-    public Phonebook() {
+    public Location() {
     }
 
 
     /**
-     * Instantiates a new Phonebook.
+     * Instantiates a new Location.
      *
      * @param lastName      the last name
      * @param firstName     the first name
@@ -48,7 +48,7 @@ public class Phonebook {
      * @param streetAddress the street address
      * @param statePostal   the state postal
      */
-    public Phonebook(String lastName, String firstName, int id, String landLine, String workPhone, String streetAddress, String statePostal) {
+    public Location(String lastName, String firstName, int id, String landLine, String workPhone, String streetAddress, String statePostal) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.id = id;
@@ -204,7 +204,7 @@ public class Phonebook {
 
     @Override
     public String toString() {
-        return "Phonebook{" +
+        return "Location{" +
                 "lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", id=" + id +
