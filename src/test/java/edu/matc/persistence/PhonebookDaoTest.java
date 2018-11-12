@@ -1,6 +1,6 @@
 package edu.matc.persistence;
 
-import edu.matc.entity.Phonebook;
+import edu.matc.entity.Location;
 import edu.matc.entity.Phonephonebook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,45 +24,45 @@ class PhonebookDaoTest {
 
     @Test
     void getByIdSuccess() {
-        Phonebook retrievedPhonebook = dao.getById(3);
-        assertEquals("Java: A Beginner’s Guide (Sixth Edition)", retrievedPhonebook.getTitle());
-        assertEquals("Herbert Schilt", retrievedPhonebook.getAuthor());
-        assertEquals("978-0071809252", retrievedPhonebook.getIsbn());
-        assertEquals(2014, retrievedPhonebook.getPublicationYear());
+        Location retrievedLocation = dao.getById(3);
+        assertEquals("Java: A Beginner’s Guide (Sixth Edition)", retrievedLocation.getTitle());
+        assertEquals("Herbert Schilt", retrievedLocation.getAuthor());
+        assertEquals("978-0071809252", retrievedLocation.getIsbn());
+        assertEquals(2014, retrievedLocation.getPublicationYear());
 
     }
 
     @Test
     void saveOrUpdateSuccess() {
-        Phonebook retrievedPhonebook = dao.getById(3);
-        retrievedPhonebook.setAuthor("Rudyard Kipling");
-        dao.saveOrUpdate(retrievedPhonebook);
-        retrievedPhonebook = dao.getById(3);
-        assertEquals("Rudyard Kipling", retrievedPhonebook.getAuthor());
+        Location retrievedLocation = dao.getById(3);
+        retrievedLocation.setAuthor("Rudyard Kipling");
+        dao.saveOrUpdate(retrievedLocation);
+        retrievedLocation = dao.getById(3);
+        assertEquals("Rudyard Kipling", retrievedLocation.getAuthor());
     }
 
     @Test
     void insertSuccess() {
 
-        Phonebook addedPhonebook = new Phonebook("Green Eggs and Ham", "Dr. Seuss", 33, "978-007414141", 1950);
-        dao.insert(addedPhonebook);
-        Phonebook retrievedPhonebook = dao.getById(4);
-        assertEquals("Green Eggs and Ham", retrievedPhonebook.getTitle());
-        assertEquals("Dr. Seuss", retrievedPhonebook.getAuthor());
-        assertEquals("978-007414141", retrievedPhonebook.getIsbn());
-        assertEquals(1950, retrievedPhonebook.getPublicationYear());
+        Location addedLocation = new Location("Green Eggs and Ham", "Dr. Seuss", 33, "978-007414141", 1950);
+        dao.insert(addedLocation);
+        Location retrievedLocation = dao.getById(4);
+        assertEquals("Green Eggs and Ham", retrievedLocation.getTitle());
+        assertEquals("Dr. Seuss", retrievedLocation.getAuthor());
+        assertEquals("978-007414141", retrievedLocation.getIsbn());
+        assertEquals(1950, retrievedLocation.getPublicationYear());
     }
 
     @Test
     void deleteSuccess() {
-        Phonebook phonebookToRemove = dao.getById(3);
-        dao.delete(phonebookToRemove);
+        Location locationToRemove = dao.getById(3);
+        dao.delete(locationToRemove);
         assertNull(dao.getById(3));
     }
 
     @Test
     void getAllSuccess() {
-        List<Phonebook> users = dao.getAll();
+        List<Location> users = dao.getAll();
         assertEquals(3, users.size());
     }
 }
