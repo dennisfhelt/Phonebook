@@ -1,9 +1,8 @@
-package matc.entity;
+package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
-import java.lang.annotation.Annotation;
 import java.util.Objects;
 
 /**

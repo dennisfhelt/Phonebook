@@ -1,7 +1,7 @@
-package matc.controller;
+package edu.matc.controller;
 
-import matc.entity.User;
-import matc.persistence.Dao;
+import edu.matc.entity.User;
+import edu.matc.persistence.Dao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
