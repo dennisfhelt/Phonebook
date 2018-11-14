@@ -9,21 +9,22 @@ import java.util.Objects;
 /**
  * The phone number.
  */
-//@Entity(name = "")
-//@Table(name = "")
+@Entity(name = "PhoneNumber")
+@Table(name = "PhoneNumbers")
 public class PhoneNumber {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    //@GenericGenerator(name = "native", strategy = "native")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
 
-    private String phoneNumber;
+    @Column(name = "number")
+    private String number;
 
     //@ManyToOne
     //@JoinColumn(name = "user",
      //       foreignKey = @ForeignKey(name = "")
     //)
-    private User user;
+   //private User user;
 
     /**
      * Instantiates a new PhoneNumber.
@@ -32,18 +33,20 @@ public class PhoneNumber {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+
+        return number;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String number) {
+
+        this.number = number;
     }
 
     @Override
     public String toString() {
         return "PhoneNumber{" +
-                "phoneNumber='" + phoneNumber + '\'' +
-                ", user=" + user +
+                "phoneNumber='" + number + '\'' +
+                //", user=" + user +
                 '}';
     }
 
@@ -52,12 +55,13 @@ public class PhoneNumber {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PhoneNumber that = (PhoneNumber) o;
-        return Objects.equals(phoneNumber, that.phoneNumber) &&
-                Objects.equals(user, that.user);
+        return Objects.equals(number, that.number);
+                //&& Objects.equals(user, that.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phoneNumber);
+
+        return Objects.hash(number);
     }
 }
