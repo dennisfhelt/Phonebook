@@ -4,7 +4,7 @@ X Database -Ace
   x Tables: phone numbers, users, roles
 Dao -Lisa & Dennis?
   Entities: phone number, user
-REST Service & controllers -Lisa
+REST Service -Lisa
 Tests- Dennis
   DaoTests
   Test Database
@@ -14,7 +14,7 @@ JSP & servlets - Kevin
   Login / signup
   edit number page
   admin page
-Use from Indie prjt? -Everyone on their own private machine (dont push?)
+Use from Indie prjt? 
   context.xml
   web.xml
   log4j
