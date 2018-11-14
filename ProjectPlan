@@ -1,9 +1,10 @@
 #Parts needed for project:
 
-Database 
+Database
   Tables: phone numbers, users, roles
 Dao
   Entities: phone number, user
+REST Service & controllers
 Tests
   DaoTests
   Test Database
@@ -13,7 +14,7 @@ JSP & servlets
   Login / signup
   edit number page
   admin page
-Use from Indie prjt:
+Use from Indie prjt?
   context.xml
   web.xml
   log4j
@@ -21,3 +22,4 @@ Use from Indie prjt:
 AWS
   pick one account to deploy to.
   add admin & authenticate
+UserGuide
