@@ -1,6 +1,6 @@
 package edu.matc.controller;
 
-import edu.matc.entity.User;
+import edu.matc.entity.*;
 import edu.matc.persistence.Dao;
 
 import javax.servlet.RequestDispatcher;
@@ -25,10 +25,14 @@ public class SearchUser extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Dao dao = new Dao(User.class);
+        Dao locationDao = new Dao(Location.class);
+        Dao numberDao = new Dao(PhoneNumber.class);
         if (req.getParameter("submit").equals("search")) {
             req.setAttribute("user", dao.getById(req.getParameter("searchTerm")));
         } else {
             req.setAttribute("users", dao.getAll());
+            req.setAttribute("locations", locationDao.getAll());
+            //req.setAttribute("numbers", numberDao.getAll());
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
