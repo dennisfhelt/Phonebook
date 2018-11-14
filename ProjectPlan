@@ -3,7 +3,8 @@
 X Database -Ace
   x Tables: phone numbers, users, roles
 Dao -Lisa & Dennis?
-  Entities: phone number, user
+  Entities: phone number, user, location, phonetype, role
+Hibernate
 REST Service -Lisa
 Tests- Dennis
   DaoTests
