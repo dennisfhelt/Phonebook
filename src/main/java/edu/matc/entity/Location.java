@@ -1,14 +1,9 @@
 package edu.matc.entity;
 
-import javax.persistence.*;
-
-import org.hibernate.annotations.GenericGenerator;
-
-import java.util.Objects;
 
 /**
  * Represents a Location entry
- */
+
 @Entity(name = "Location")
 @Table(name = "phonebook")
 public class Location {
@@ -32,7 +27,7 @@ public class Location {
 
     /**
      * Instantiates a new Location.
-     */
+
     public Location() {
     }
 
@@ -47,7 +42,7 @@ public class Location {
      * @param workPhone     the work phone
      * @param streetAddress the street address
      * @param statePostal   the state postal
-     */
+
     public Location(String lastName, String firstName, int id, String landLine, String workPhone, String streetAddress, String statePostal) {
         this.lastName = lastName;
         this.firstName = firstName;
@@ -62,7 +57,7 @@ public class Location {
      * Gets last name.
      *
      * @return the last name
-     */
+
     public String getLastName() {
         return lastName;
     }
@@ -71,7 +66,7 @@ public class Location {
      * Sets last name.
      *
      * @param lastName the last name
-     */
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -80,7 +75,7 @@ public class Location {
      * Gets first name.
      *
      * @return the first name
-     */
+
     public String getFirstName() {
         return firstName;
     }
@@ -89,7 +84,7 @@ public class Location {
      * Sets first name.
      *
      * @param firstName the first name
-     */
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -98,7 +93,7 @@ public class Location {
      * Gets id.
      *
      * @return the id
-     */
+
     public int getId() {
         return id;
     }
@@ -107,7 +102,7 @@ public class Location {
      * Sets id.
      *
      * @param id the id
-     */
+
     public void setId(int id) {
         this.id = id;
     }
@@ -116,7 +111,7 @@ public class Location {
      * Gets land line.
      *
      * @return the land line
-     */
+
     public String getLandLine() {
         return landLine;
     }
@@ -125,7 +120,7 @@ public class Location {
      * Sets land line.
      *
      * @param landLine the land line
-     */
+
     public void setLandLine(String landLine) {
         this.landLine = landLine;
     }
@@ -134,7 +129,7 @@ public class Location {
      * Gets work phone.
      *
      * @return the work phone
-     */
+
     public String getWorkPhone() {
         return workPhone;
     }
@@ -143,7 +138,7 @@ public class Location {
      * Sets work phone.
      *
      * @param workPhone the work phone
-     */
+
     public void setWorkPhone(String workPhone) {
         this.workPhone = workPhone;
     }
@@ -152,7 +147,7 @@ public class Location {
      * Gets street address.
      *
      * @return the street address
-     */
+
     public String getStreetAddress() {
         return streetAddress;
     }
@@ -161,7 +156,7 @@ public class Location {
      * Sets street address.
      *
      * @param streetAddress the street address
-     */
+
     public void setStreetAddress(String streetAddress) {
         this.streetAddress = streetAddress;
     }
@@ -170,7 +165,7 @@ public class Location {
      * Gets city.
      *
      * @return the city
-     */
+
     public String getCity() {
         return city;
     }
@@ -179,7 +174,7 @@ public class Location {
      * Sets city.
      *
      * @param city the city
-     */
+
     public void setCity(String city) {
         this.city = city;
     }
@@ -188,7 +183,7 @@ public class Location {
      * Gets state postal.
      *
      * @return the state postal
-     */
+
     public String getStatePostal() {
         return statePostal;
     }
@@ -197,7 +192,7 @@ public class Location {
      * Sets state postal.
      *
      * @param statePostal the state postal
-     */
+
     public void setStatePostal(String statePostal) {
         this.statePostal = statePostal;
     }
@@ -216,3 +211,5 @@ public class Location {
                 '}';
     }
 }
+
+        */
