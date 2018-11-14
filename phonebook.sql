@@ -1,13 +1,13 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2018-11-12 21:31:01.963
+-- Last modification date: 2018-11-14 18:33:55.904
 
 -- tables
 -- Table: Locations
 CREATE TABLE Locations (
   id int NOT NULL,
-  street int NOT NULL,
-  city int NOT NULL,
-  state int NOT NULL,
+  street varchar(30) NOT NULL,
+  city varchar(30) NOT NULL,
+  state varchar(30) NOT NULL,
   zip int NOT NULL,
   CONSTRAINT Locations_pk PRIMARY KEY (id)
 );
@@ -31,7 +31,7 @@ CREATE TABLE PhoneType (
 -- Table: Role
 CREATE TABLE Role (
   id int NOT NULL,
-  role int NOT NULL,
+  role varchar(30) NOT NULL,
   Users_id int NOT NULL,
   CONSTRAINT Role_pk PRIMARY KEY (id)
 );
@@ -39,10 +39,11 @@ CREATE TABLE Role (
 -- Table: Users
 CREATE TABLE Users (
   id int NOT NULL,
-  firstName int NOT NULL,
-  lastName int NOT NULL,
-  password int NOT NULL,
+  firstName varchar(30) NOT NULL,
+  lastName varchar(30) NOT NULL,
+  password varchar(100) NOT NULL,
   Locations_id int NOT NULL,
+  username varchar(100) NOT NULL,
   CONSTRAINT id PRIMARY KEY (id)
 );
 
