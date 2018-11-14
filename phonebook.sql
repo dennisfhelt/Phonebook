@@ -5,9 +5,9 @@
 -- Table: Locations
 CREATE TABLE Locations (
   id int NOT NULL,
-  street int NOT NULL,
-  city int NOT NULL,
-  state int NOT NULL,
+  street varchar(255) NOT NULL,
+  city varchar(255) NOT NULL,
+  state varchar(2) NOT NULL,
   zip int NOT NULL,
   CONSTRAINT Locations_pk PRIMARY KEY (id)
 );
@@ -17,7 +17,7 @@ CREATE TABLE PhoneNumbers (
   id int NOT NULL,
   number int NOT NULL,
   Users_id int NOT NULL,
-  PhoneType_id int NOT NULL,
+  PhoneType_id varchar(255) NOT NULL,
   CONSTRAINT PhoneNumbers_pk PRIMARY KEY (id)
 );
 
@@ -31,17 +31,17 @@ CREATE TABLE PhoneType (
 -- Table: Role
 CREATE TABLE Role (
   id int NOT NULL,
-  role int NOT NULL,
-  Users_id int NOT NULL,
+  role varchar(255) NOT NULL,
+  Users_id varchar(255) NOT NULL,
   CONSTRAINT Role_pk PRIMARY KEY (id)
 );
 
 -- Table: Users
 CREATE TABLE Users (
   id int NOT NULL,
-  firstName int NOT NULL,
-  lastName int NOT NULL,
-  password int NOT NULL,
+  firstName varchar(255) NOT NULL,
+  lastName varchar(255) NOT NULL,
+  password varchar(255) NOT NULL,
   Locations_id int NOT NULL,
   CONSTRAINT id PRIMARY KEY (id)
 );
