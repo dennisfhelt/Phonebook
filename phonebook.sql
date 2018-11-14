@@ -15,7 +15,7 @@ CREATE TABLE Locations (
 -- Table: PhoneNumbers
 CREATE TABLE PhoneNumbers (
   id int NOT NULL,
-  number int NOT NULL,
+  number varchar(11) NOT NULL,
   Users_id int NOT NULL,
   PhoneType_id int NOT NULL,
   CONSTRAINT PhoneNumbers_pk PRIMARY KEY (id)
