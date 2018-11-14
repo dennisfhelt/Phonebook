@@ -14,25 +14,23 @@ import java.util.Set;
  *
  * @author lclemens
  */
-//@Entity(name ="User")
-//@Table(name = "user")
+@Entity(name ="User")
+@Table(name = "Users")
 public class User {
-    @Column(name = "first_name")
+    @Column(name = "firstName")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "lastName")
     private String lastName;
 
-    @Column(name = "user_name")
-    private String userName;
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    //@GenericGenerator(name = "native", strategy = "native")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
     //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<PhoneNumber> numbers = new HashSet<>();
+   // private Set<PhoneNumber> numbers = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -51,7 +49,6 @@ public class User {
     public User(String firstName, String lastName, String userName, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
     }
 
 
@@ -92,24 +89,6 @@ public class User {
     }
 
     /**
-     * Gets user name.
-     *
-     * @return the user name
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    /**
-     * Sets user name.
-     *
-     * @param userName the user name
-     */
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    /**
      * Gets id.
      *
      * @return the id
@@ -133,7 +112,6 @@ public class User {
         return "User{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
                 ", id='" + id + '\'' +
                 '}';
     }
@@ -145,12 +123,11 @@ public class User {
         User user = (User) o;
         return id == user.id &&
                 Objects.equals(firstName, user.firstName) &&
-                Objects.equals(lastName, user.lastName) &&
-                Objects.equals(userName, user.userName);
+                Objects.equals(lastName, user.lastName) ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, userName, id);
+        return Objects.hash(firstName, lastName, id);
     }
 }

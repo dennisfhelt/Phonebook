@@ -10,26 +10,22 @@ import java.util.Objects;
  */
 
 @Entity(name = "Role")
-@Table(name = "role")
+@Table(name = "Role")
 public class Role {
 
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    //@GenericGenerator(name = "native", strategy = "native")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    //@Column(name = "role_name")
-    private String name;
-
-    //@Column(name = "user_name")
-    private String userName;
+    private String role;
 
     //@ManyToOne
-    //@JoinColumn(name = "user_id",
-    //        foreignKey = @ForeignKey(name = "role_user_id_fk")
+    //@JoinColumn(role = "user_id",
+     //       foreignKey = @ForeignKey(role = "user_id")
     //)
-    private User user;
+    //private User user;
 
     /**
      * Instantiates a new Role.
@@ -40,13 +36,12 @@ public class Role {
     /**
      * Instantiates a new Role.
      *
-     * @param name        the name
+     * @param role        the role
      * @param user        the user
      */
-    public Role(String name, User user, String userName ) {
-        this.user = user;
-        this.name = name;
-        this.userName = userName;
+    public Role(String role, User user) {
+        //this.user = user;
+        this.role = role;
     }
 
     /**
@@ -68,57 +63,48 @@ public class Role {
     }
 
     /**
-     * Gets name.
+     * Gets role.
      *
-     * @return the name
+     * @return the role
      */
-    public String getName() {
-        return name;
+    public String getrole() {
+        return role;
     }
 
     /**
-     * Sets name.
+     * Sets role.
      *
-     * @param name the name
+     * @param role the role
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setrole(String role) {
+        this.role = role;
     }
 
-    /**
-     * Gets user name.
-     *
-     * @return the user name
-     */
-    public String getUserName() {
-        return userName;
-    }
 
     /**
      * Gets user.
      *
      * @return the user
      */
-    public User getUser() {
-        return user;
-    }
+   // public User getUser() {
+        //return user;
+   // }
 
     /**
      * Sets user.
      *
-     * @param user the user
+     * @param //user the user
      */
-    public void setUser(User user) {
-        this.user = user;
-    }
+    //public void setUser(User user) {
+        //this.user = user;
+    //}
 
     @Override
     public String toString() {
         return "Role{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", user=" + user +
-                ", user name=" + userName +
+                ", role='" + role + '\'' +
+                //", user=" + user +
                 '}';
     }
 
@@ -128,14 +114,13 @@ public class Role {
         if (o == null || getClass() != o.getClass()) return false;
         Role role = (Role) o;
         return id == role.id &&
-                Objects.equals(userName, role.userName) &&
-                Objects.equals(name, role.name);
+                Objects.equals(role, role.role);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id,  name, userName);
+        return Objects.hash(id,  role);
     }
 
 }
