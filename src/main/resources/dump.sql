@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.12, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: BookSeller
+-- Host: 127.0.0.1    Database: sample
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version	8.0.12
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8mb4 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -16,32 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `book`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `book`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `book` (
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(70) DEFAULT NULL,
-  `author` varchar(50) DEFAULT NULL,
-  `isbn` varchar(25) DEFAULT NULL,
-  `publication_year` int(11) DEFAULT NULL,
+  `first_name` varchar(25) DEFAULT NULL,
+  `last_name` varchar(30) DEFAULT NULL,
+  `user_name` varchar(15) DEFAULT NULL,
+  `password` varchar(30) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `book_id_uindex` (`id`),
-  UNIQUE KEY `book_isbn_uindex` (`isbn`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  UNIQUE KEY `users_user_name_uindex` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `book`
+-- Dumping data for table `user`
 --
 
-LOCK TABLES `book` WRITE;
-/*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'Head First Java, 2nd Edition','Kathy Sierra','978-0596009205',2005),(2,'Beginning Hibernate','joseph ottinger','978-1-4842-2319-2',2016),(3,'Java: A Beginner’s Guide (Sixth Edition)','Herbert Schilt','978-0071809252',2014);
-/*!40000 ALTER TABLE `book` ENABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'Joe','Coyne','jcoyne','supersecret1','1964-04-01'),(2,'Fred','Hensen','fhensen','supersecret2','1988-05-08'),(3,'Barney','Curry','bcurry','supersecret3','1947-11-11'),(4,'Karen','Mack','kmack','supersecret4','1986-07-08'),(5,'Dianne','Klein','dklein','supersecret5','1991-09-22'),(6,'Dawn','Tillman','dtillman','supersecret6','1979-08-30');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-30  8:46:25
+-- Dump completed on 2018-10-03 16:05:34
