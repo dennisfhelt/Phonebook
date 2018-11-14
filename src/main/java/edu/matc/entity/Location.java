@@ -1,24 +1,29 @@
 package edu.matc.entity;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
 /**
  * Represents a Location entry
-
+ */
 @Entity(name = "Location")
-@Table(name = "phonebook")
+@Table(name = "Locations")
 public class Location {
-    @Column(name = "last_name")
-    private String lastName;
-    @Column(name = "first_name")
-    private String firstName;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
+
     private int id;
+
     @Column(name = "land_line")
     private String landLine;
+
     @Column(name = "work_phone")
     private String workPhone;
+
     @Column(name = "street_address")
     private String streetAddress;
     private String city;

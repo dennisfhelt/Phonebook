@@ -1,25 +1,25 @@
 #Parts needed for project:
 
-X Database
+X Database -Ace
   x Tables: phone numbers, users, roles
-Dao
+Dao -Lisa & Dennis?
   Entities: phone number, user
-REST Service & controllers
-Tests
+REST Service & controllers -Lisa
+Tests- Dennis
   DaoTests
   Test Database
   SQL Dump
-JSP & servlets
+JSP & servlets - Kevin
   Home page
   Login / signup
   edit number page
   admin page
-Use from Indie prjt?
+Use from Indie prjt? -Everyone on their own private machine (dont push?)
   context.xml
   web.xml
   log4j
   hibernate
-X AWS
+X AWS -Lisa
   x pick one account to deploy to.
   add admin & authenticate
-UserGuide
+UserGuide -Ace
