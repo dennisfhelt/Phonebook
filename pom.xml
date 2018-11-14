@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>edu.matc.exercises</groupId>
-    <artifactId>week-4-hibernate-exercise</artifactId>
+    <groupId>edu.matc.Phonebook</groupId>
+    <artifactId>Phonebook</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>week-4-hibernate-exercise Maven Webapp</name>
+    <name>Phonebook Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
@@ -72,9 +72,21 @@
             <artifactId>hibernate-c3p0</artifactId>
             <version>5.2.12.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.2.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
-        <finalName>week-4-hibernate-exercise</finalName>
+        <finalName>Phonebook</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -1,17 +1,12 @@
 package edu.matc.entity;
 
-import javax.persistence.*;
-
-import org.hibernate.annotations.GenericGenerator;
-
-import java.util.Objects;
 
 /**
- * Represents a Phonebook entry
- */
-@Entity(name = "Phonebook")
+ * Represents a Location entry
+
+@Entity(name = "Location")
 @Table(name = "phonebook")
-public class Phonebook {
+public class Location {
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "first_name")
@@ -31,14 +26,14 @@ public class Phonebook {
     private String statePostal;
 
     /**
-     * Instantiates a new Phonebook.
-     */
-    public Phonebook() {
+     * Instantiates a new Location.
+
+    public Location() {
     }
 
 
     /**
-     * Instantiates a new Phonebook.
+     * Instantiates a new Location.
      *
      * @param lastName      the last name
      * @param firstName     the first name
@@ -47,8 +42,8 @@ public class Phonebook {
      * @param workPhone     the work phone
      * @param streetAddress the street address
      * @param statePostal   the state postal
-     */
-    public Phonebook(String lastName, String firstName, int id, String landLine, String workPhone, String streetAddress, String statePostal) {
+
+    public Location(String lastName, String firstName, int id, String landLine, String workPhone, String streetAddress, String statePostal) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.id = id;
@@ -62,7 +57,7 @@ public class Phonebook {
      * Gets last name.
      *
      * @return the last name
-     */
+
     public String getLastName() {
         return lastName;
     }
@@ -71,7 +66,7 @@ public class Phonebook {
      * Sets last name.
      *
      * @param lastName the last name
-     */
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -80,7 +75,7 @@ public class Phonebook {
      * Gets first name.
      *
      * @return the first name
-     */
+
     public String getFirstName() {
         return firstName;
     }
@@ -89,7 +84,7 @@ public class Phonebook {
      * Sets first name.
      *
      * @param firstName the first name
-     */
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -98,7 +93,7 @@ public class Phonebook {
      * Gets id.
      *
      * @return the id
-     */
+
     public int getId() {
         return id;
     }
@@ -107,7 +102,7 @@ public class Phonebook {
      * Sets id.
      *
      * @param id the id
-     */
+
     public void setId(int id) {
         this.id = id;
     }
@@ -116,7 +111,7 @@ public class Phonebook {
      * Gets land line.
      *
      * @return the land line
-     */
+
     public String getLandLine() {
         return landLine;
     }
@@ -125,7 +120,7 @@ public class Phonebook {
      * Sets land line.
      *
      * @param landLine the land line
-     */
+
     public void setLandLine(String landLine) {
         this.landLine = landLine;
     }
@@ -134,7 +129,7 @@ public class Phonebook {
      * Gets work phone.
      *
      * @return the work phone
-     */
+
     public String getWorkPhone() {
         return workPhone;
     }
@@ -143,7 +138,7 @@ public class Phonebook {
      * Sets work phone.
      *
      * @param workPhone the work phone
-     */
+
     public void setWorkPhone(String workPhone) {
         this.workPhone = workPhone;
     }
@@ -152,7 +147,7 @@ public class Phonebook {
      * Gets street address.
      *
      * @return the street address
-     */
+
     public String getStreetAddress() {
         return streetAddress;
     }
@@ -161,7 +156,7 @@ public class Phonebook {
      * Sets street address.
      *
      * @param streetAddress the street address
-     */
+
     public void setStreetAddress(String streetAddress) {
         this.streetAddress = streetAddress;
     }
@@ -170,7 +165,7 @@ public class Phonebook {
      * Gets city.
      *
      * @return the city
-     */
+
     public String getCity() {
         return city;
     }
@@ -179,7 +174,7 @@ public class Phonebook {
      * Sets city.
      *
      * @param city the city
-     */
+
     public void setCity(String city) {
         this.city = city;
     }
@@ -188,7 +183,7 @@ public class Phonebook {
      * Gets state postal.
      *
      * @return the state postal
-     */
+
     public String getStatePostal() {
         return statePostal;
     }
@@ -197,14 +192,14 @@ public class Phonebook {
      * Sets state postal.
      *
      * @param statePostal the state postal
-     */
+
     public void setStatePostal(String statePostal) {
         this.statePostal = statePostal;
     }
 
     @Override
     public String toString() {
-        return "Phonebook{" +
+        return "Location{" +
                 "lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", id=" + id +
@@ -216,3 +211,5 @@ public class Phonebook {
                 '}';
     }
 }
+
+        */

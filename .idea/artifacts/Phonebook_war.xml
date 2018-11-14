@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="Phonebook:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="week-4-hibernate-exercise.war">
+    <root id="archive" name="Phonebook.war">
       <element id="artifact" artifact-name="Phonebook:war exploded" />
     </root>
   </artifact>
