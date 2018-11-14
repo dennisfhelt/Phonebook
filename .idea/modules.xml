@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Phonebook.iml" filepath="$PROJECT_DIR$/.idea/Phonebook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PhonebookDennis.iml" filepath="$PROJECT_DIR$/PhonebookDennis.iml" />
+      <module fileurl="file://$USER_HOME$/week-4-hibernate-exercise-dennisfhelt/week-4-hibernate-exercise.iml" filepath="$USER_HOME$/week-4-hibernate-exercise-dennisfhelt/week-4-hibernate-exercise.iml" />
     </modules>
   </component>
 </project>

@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Phonebook:war exploded">
-    <output-path>$PROJECT_DIR$/target/week-4-hibernate-exercise</output-path>
+  <artifact type="exploded-war" name="week-4-hibernate-exercise:war exploded">
+    <output-path>$USER_HOME$/week-4-hibernate-exercise-dennisfhelt/target/week-4-hibernate-exercise</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Phonebook" />
+          <element id="module-output" name="week-4-hibernate-exercise" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax:javaee-web-api:7.0" />
@@ -28,9 +28,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/week-4-hibernate-exercise/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$USER_HOME$/week-4-hibernate-exercise-dennisfhelt/target/week-4-hibernate-exercise/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Phonebook/web/Web" />
+      <element id="javaee-facet-resources" facet="week-4-hibernate-exercise/web/Web" />
     </root>
   </artifact>
 </component>

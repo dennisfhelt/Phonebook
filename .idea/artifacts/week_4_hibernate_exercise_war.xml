@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="week-4-hibernate-exercise:war">
+    <output-path>$USER_HOME$/week-4-hibernate-exercise-dennisfhelt/target</output-path>
+    <root id="archive" name="week-4-hibernate-exercise.war">
+      <element id="artifact" artifact-name="week-4-hibernate-exercise:war exploded" />
+    </root>
+  </artifact>
+</component>

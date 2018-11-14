@@ -2,15 +2,11 @@ package edu.matc.entity;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import java.util.Objects;
-
 /**
  * Represents a Phonebook entry
  */
 @Entity(name = "Phonebook")
-@Table(name = "phonebook")
+@Table(name = "user")
 public class Phonebook {
     @Column(name = "last_name")
     private String lastName;
@@ -18,17 +14,7 @@ public class Phonebook {
     private String firstName;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
     private int id;
-    @Column(name = "land_line")
-    private String landLine;
-    @Column(name = "work_phone")
-    private String workPhone;
-    @Column(name = "street_address")
-    private String streetAddress;
-    private String city;
-    @Column(name = "state_postal")
-    private String statePostal;
 
     /**
      * Instantiates a new Phonebook.
@@ -52,10 +38,6 @@ public class Phonebook {
         this.lastName = lastName;
         this.firstName = firstName;
         this.id = id;
-        this.landLine = landLine;
-        this.workPhone = workPhone;
-        this.streetAddress = streetAddress;
-        this.statePostal = statePostal;
     }
 
     /**
@@ -112,94 +94,24 @@ public class Phonebook {
         this.id = id;
     }
 
-    /**
-     * Gets land line.
-     *
-     * @return the land line
-     */
-    public String getLandLine() {
-        return landLine;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Phonebook)) return false;
+
+        Phonebook phonebook = (Phonebook) o;
+
+        if (id != phonebook.id) return false;
+        if (!lastName.equals(phonebook.lastName)) return false;
+        return firstName.equals(phonebook.firstName);
     }
 
-    /**
-     * Sets land line.
-     *
-     * @param landLine the land line
-     */
-    public void setLandLine(String landLine) {
-        this.landLine = landLine;
-    }
-
-    /**
-     * Gets work phone.
-     *
-     * @return the work phone
-     */
-    public String getWorkPhone() {
-        return workPhone;
-    }
-
-    /**
-     * Sets work phone.
-     *
-     * @param workPhone the work phone
-     */
-    public void setWorkPhone(String workPhone) {
-        this.workPhone = workPhone;
-    }
-
-    /**
-     * Gets street address.
-     *
-     * @return the street address
-     */
-    public String getStreetAddress() {
-        return streetAddress;
-    }
-
-    /**
-     * Sets street address.
-     *
-     * @param streetAddress the street address
-     */
-    public void setStreetAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
-    }
-
-    /**
-     * Gets city.
-     *
-     * @return the city
-     */
-    public String getCity() {
-        return city;
-    }
-
-    /**
-     * Sets city.
-     *
-     * @param city the city
-     */
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    /**
-     * Gets state postal.
-     *
-     * @return the state postal
-     */
-    public String getStatePostal() {
-        return statePostal;
-    }
-
-    /**
-     * Sets state postal.
-     *
-     * @param statePostal the state postal
-     */
-    public void setStatePostal(String statePostal) {
-        this.statePostal = statePostal;
+    @Override
+    public int hashCode() {
+        int result = lastName.hashCode();
+        result = 31 * result + firstName.hashCode();
+        result = 31 * result + id;
+        return result;
     }
 
     @Override
@@ -208,11 +120,6 @@ public class Phonebook {
                 "lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", id=" + id +
-                ", landLine='" + landLine + '\'' +
-                ", workPhone='" + workPhone + '\'' +
-                ", streetAddress='" + streetAddress + '\'' +
-                ", city='" + city + '\'' +
-                ", statePostal='" + statePostal + '\'' +
                 '}';
     }
 }

@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Phonebook" />
+        <module name="week-4-hibernate-exercise" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Phonebook" target="1.8" />
+      <module name="week-4-hibernate-exercise" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
