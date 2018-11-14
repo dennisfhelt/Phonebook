@@ -26,12 +26,12 @@ public class SearchUser extends HttpServlet {
 
         Dao dao = new Dao(User.class);
         if (req.getParameter("submit").equals("search")) {
-            req.setAttribute("user", dao.getById(req.getParameter("")));
+            req.setAttribute("user", dao.getById(req.getParameter("searchTerm")));
         } else {
             req.setAttribute("users", dao.getAll());
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         dispatcher.forward(req, resp);
     }
 }

@@ -39,10 +39,11 @@ CREATE TABLE Role (
 -- Table: Users
 CREATE TABLE Users (
   id int NOT NULL,
+  username varchar(255) NOT NULL,
   firstName varchar(255) NOT NULL,
   lastName varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
-  Locations_id int NOT NULL,
+  Locations_id int,
   CONSTRAINT id PRIMARY KEY (id)
 );
 
