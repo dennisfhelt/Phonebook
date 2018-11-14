@@ -72,6 +72,12 @@
             <artifactId>hibernate-c3p0</artifactId>
             <version>5.2.12.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <finalName>Phonebook</finalName>

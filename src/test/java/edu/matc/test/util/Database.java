@@ -1,6 +1,5 @@
 package edu.matc.test.util;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+
 /**
  * Provides access the database
  * Created on 8/31/16.
@@ -41,10 +41,10 @@ public class Database {
         try {
             properties.load (this.getClass().getResourceAsStream("/database.properties"));
         } catch (IOException ioe) {
-            System.out.println("Database.loadProperties()...Cannot load the properties file");
+            logger.debug("Database.loadProperties()...Cannot load the properties file");
             ioe.printStackTrace();
         } catch (Exception e) {
-            System.out.println("Database.loadProperties()..." + e);
+            logger.debug("Database.loadProperties()..." + e);
             e.printStackTrace();
         }
 
