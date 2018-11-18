@@ -1,13 +1,13 @@
-package matc.controller;
-import matc.entity.User;
-import matc.persistence.Dao;
+package edu.matc.controller;
+import edu.matc.entity.User;
+import edu.matc.persistence.Dao;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/users")
-public class RESTCreator {
+public class RESTService {
 
     @POST
     @Path("/id")
@@ -20,7 +20,7 @@ public class RESTCreator {
             StringBuilder response = new StringBuilder();
             for(User user : users){
                 response.append("First Name: " + user.getFirstName() + " Last Name: " + user.getLastName()
-                        + " ID: " + user.getId() + " Date of Birth: " + user.getDateOfBirth() + "<br>");
+                        + " ID: " + user.getId() + "<br>");
             }
             return Response.status(200)
                     .entity("Users <br> " + response)
