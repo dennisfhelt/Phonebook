@@ -27,7 +27,7 @@ public class PhoneNumber {
     )
     private User user;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "PhoneType_id",
             foreignKey = @ForeignKey(name = "PhoneNumbers_PhoneType")
     )
@@ -39,34 +39,74 @@ public class PhoneNumber {
     public PhoneNumber() {
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets number.
+     *
+     * @return the number
+     */
     public String getNumber() {
         return number;
     }
 
+    /**
+     * Sets number.
+     *
+     * @param number the number
+     */
     public void setNumber(String number) {
         this.number = number;
     }
 
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
     public void setUser(User user) {
         this.user = user;
     }
 
+    /**
+     * Gets phone type.
+     *
+     * @return the phone type
+     */
     public PhoneType getPhoneType() {
         return phoneType;
     }
 
+    /**
+     * Sets phone type.
+     *
+     * @param phoneType the phone type
+     */
     public void setPhoneType(PhoneType phoneType) {
         this.phoneType = phoneType;
     }

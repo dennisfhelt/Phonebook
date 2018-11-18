@@ -109,11 +109,11 @@
         	<input type="text" class="text form-control" name="homeNumber" placeholder="###-###-####" />
 		</div>
 		<div class="form-group col-sm-4">
-			<label for="cellNumber">&nbsp;Cell Number:</label>
+			<label for="cellNumber">&nbsp;Cell Phone:</label>
         	<input type="text" class="text form-control" name="cellNumber" placeholder="###-###-####" />
 		</div>
 		<div class="form-group col-sm-4">
-			<label for="workNumber">&nbsp;Work Number:</label>
+			<label for="workNumber">&nbsp;Work Phone:</label>
         	<input type="text" class="text form-control" name="workNumber" placeholder="###-###-####" />
 		</div>
 
