@@ -1,90 +1,99 @@
 /*********************************************************************************/
 /* Override Styles                                                               */
 /*********************************************************************************/
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+
+body {
+    background-color: #333;
+}
+
+h3, h4 {
+    color: white;
+}
+
+.container {
+    padding: 0em;
+}
+
+.button:hover {
+    text-decoration: none;
+}
+
 .button-inverse {
     background-color: rgba(0, 0, 0, 0) !important;
     border: 2px solid #F3CD52 !important;
     color: #F3CD52 !important;
 }
 
-#three-column .button {
-    display: none;
+.button-inverse:hover {
+    text-decoration: none;
 }
 
-form input {
-    padding: 1em !important;
-    margin: 1.5em 0em 1.5em 0em !important;
+.bg-yellow {
+    background-color: #F3CD52;
 }
 
-/*********************************************************************************/
-/* Navbar Styles                                                                 */
-/*********************************************************************************/
 .navbar {
+    padding: 0em;
 }
 
 .nav-link-home {
-    color: #333;
+color: #333;
     font-size: 2em;
     font-weight: bold;
-    float: left;
-    padding-top: .5em;
+}
+.nav-link-home:hover {
+    color: #333;
     text-decoration: none;
 }
 
 .nav-link {
     border-bottom: 3px solid #F3CD52;
     color: #333;
-    font-size: 1.5em;
-    float: right;
-    text-decoration: none;
-    padding: 1em .5em .5em .5em;
+    font-size: 1.2em;
+    padding: 1em;
 }
 .nav-link:hover {
     border-bottom: 3px solid black;
     background-color: #333;
-    color: white;
+    color: #F3CD52;
 }
 
 
 /*********************************************************************************/
-/* Sign Up Styles                                                                */
+/* Form Styles                                                                   */
 /*********************************************************************************/
 #signUp {
-    display: block;
-    padding: 5em 0em 2em 0em;
+    width: 40%;
+    margin-bottom: 2em;
+}
+#logIn {
+    width: 20%;
+    margin-bottom: 2em;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 1.2em;
     text-align: center;
-    width: 50%;
 }
 
-input[name="firstName"], input[name="homeNumber"], input[name="password"] {
-    width: 45% !important;
-    float: left;
+label {
+    color: white;
+    font-size: 1.5em;
 }
 
-input[name="lastName"], input[name="cellNumber"], input[name="confirmPassword"] {
-    width: 45% !important;
-    float: right;
+.select {
+    padding: .75em;
+    border-radius: 5px;
+    color: #555;
 }
 
-input[name="address"], input[name="email"] {
-    width: 96% !important;
-    margin-bottom: 0em !important;
-}
-
-input[name="city"], input[name="state"] {
-    width: 27% !important;
-    float: left;
-    margin-right: 1.5em !important;
-    margin-bottom: 0em !important;
-}
-
-input[name="zipCode"] {
-    width: 27% !important;
-    float: right;
-    margin-bottom: 0em !important;
-}
-
-input[name="submit"] {
-    padding: .5em !important;
-    width: 100%;
+input[type="submit"] {
+    font-size: 1em;
 }

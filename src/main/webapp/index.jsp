@@ -12,17 +12,10 @@ Released   : 20131021
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Phonebook</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css' />
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/phonebook.css" rel="stylesheet" type="text/css" media="all" />
-
-
+	<title>Phonebook</title>
+	<jsp:include page="headTags.jsp" />
 </head>
+
 <body>
 <div id="header-wrapper">
 	<div id="header" class="container">
@@ -46,37 +39,34 @@ Released   : 20131021
 		       Phonebook makes it easy to keep track of the people that matter
 		       the most in your life.
 		   </p>
-			<a href="logIn.jsp" class="button button-inverse">Log In</a>
+			<a href="homePage.jsp" class="button button-inverse">Log In</a>
 			&nbsp;&nbsp;&nbsp;
 			<a href="signUp.jsp" class="button">Sign Up</a>
 		</div>
 	</div>
-
 </div>
+
 <div id="three-column" class="container">
-	<div id="tbox1">
-		<div class="title">
+	<div class="row">
+		<div class="title col-sm-4">
 			<h2 class="icon icon-search"></h2>
+			<p>Search for people you know using their name, phone number, or zip code.</p>
 		</div>
-		<p>Search for people you know using their name, phone number, or zip code.</p>
-		<a href="#" class="button">Learn More</a> </div>
-	<div id="tbox2">
-		<div class="title">
+
+		<div class="title col-sm-4">
 			<h2 class="icon icon-book"></h2>
+			<p>Store all your contacts in one place, so you can find who you want, when you want.</p>
 		</div>
-		<p>Store all your contacts in one place, so you can find who you want, when you want.</p>
-		<a href="#" class="button">Learn More</a> </div>
-	<div id="tbox3">
-		<div class="title">
+
+		<div class="title col-sm-4">
 			<h2 class="icon icon-refresh"></h2>
+			<p>Any changes your contacts make to their information is automatically updated,
+			   so you no longer have to worry about making those changes yourself.</p>
 		</div>
-		<p>Any changes your contacts make to their information is automatically updated,
-		   so you no longer have to worry about making those changes yourself.</p>
-		<a href="#" class="button">Learn More</a> </div>
+	</div>
 </div>
 
-<div id="copyright" class="container">
-	<p>&copy;Phonebook All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
-</div>
+<jsp:include page="footer.jsp" />
+
 </body>
 </html>
