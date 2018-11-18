@@ -1,0 +1,99 @@
+/*********************************************************************************/
+/* Override Styles                                                               */
+/*********************************************************************************/
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+
+body {
+    background-color: #333;
+}
+
+h3, h4 {
+    color: white;
+}
+
+.container {
+    padding: 0em;
+}
+
+.button:hover {
+    text-decoration: none;
+}
+
+.button-inverse {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: 2px solid #F3CD52 !important;
+    color: #F3CD52 !important;
+}
+
+.button-inverse:hover {
+    text-decoration: none;
+}
+
+.bg-yellow {
+    background-color: #F3CD52;
+}
+
+.navbar {
+    padding: 0em;
+}
+
+.nav-link-home {
+color: #333;
+    font-size: 2em;
+    font-weight: bold;
+}
+.nav-link-home:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-link {
+    border-bottom: 3px solid #F3CD52;
+    color: #333;
+    font-size: 1.2em;
+    padding: 1em;
+}
+.nav-link:hover {
+    border-bottom: 3px solid black;
+    background-color: #333;
+    color: #F3CD52;
+}
+
+
+/*********************************************************************************/
+/* Form Styles                                                                   */
+/*********************************************************************************/
+#signUp {
+    width: 40%;
+    margin-bottom: 2em;
+}
+#logIn {
+    width: 20%;
+    margin-bottom: 2em;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+label {
+    color: white;
+    font-size: 1.5em;
+}
+
+.select {
+    padding: .75em;
+    border-radius: 5px;
+    color: #555;
+}
+
+input[type="submit"] {
+    font-size: 1em;
+}
