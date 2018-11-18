@@ -8,12 +8,9 @@ import java.util.Objects;
 /**
  * The type role.
  */
-
 @Entity(name = "Role")
 @Table(name = "Role")
 public class Role {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -21,11 +18,13 @@ public class Role {
 
     private String role;
 
-    //@ManyToOne
-    //@JoinColumn(role = "user_id",
-     //       foreignKey = @ForeignKey(role = "user_id")
-    //)
-    //private User user;
+    private String username;
+
+    @ManyToOne
+    @JoinColumn(name = "Users_id",
+            foreignKey = @ForeignKey(name = "Role_Users")
+    )
+    private User user;
 
     /**
      * Instantiates a new Role.
@@ -36,8 +35,8 @@ public class Role {
     /**
      * Instantiates a new Role.
      *
-     * @param role        the role
-     * @param user        the user
+     * @param role the role
+     * @param user the user
      */
     public Role(String role, User user) {
         //this.user = user;
@@ -67,7 +66,7 @@ public class Role {
      *
      * @return the role
      */
-    public String getrole() {
+    public String getRole() {
         return role;
     }
 
@@ -76,28 +75,45 @@ public class Role {
      *
      * @param role the role
      */
-    public void setrole(String role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     /**
      * Gets user.
      *
      * @return the user
      */
-   // public User getUser() {
-        //return user;
-   // }
+    public User getUser() {
+        return user;
+    }
 
     /**
      * Sets user.
      *
-     * @param //user the user
+     * @param user the user
      */
-    //public void setUser(User user) {
-        //this.user = user;
-    //}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     @Override
     public String toString() {

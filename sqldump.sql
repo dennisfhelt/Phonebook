@@ -83,7 +83,7 @@ CREATE TABLE `PhoneType` (
 
 LOCK TABLES `PhoneType` WRITE;
 /*!40000 ALTER TABLE `PhoneType` DISABLE KEYS */;
-INSERT INTO `PhoneType` VALUES (1,'Work'),(2,'Home');
+INSERT INTO `PhoneType` VALUES (1,'Work'),(2,'Home')(3,'Cell');
 /*!40000 ALTER TABLE `PhoneType` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,6 +97,7 @@ DROP TABLE IF EXISTS `Role`;
 CREATE TABLE `Role` (
   `id` int(11) NOT NULL,
   `role` varchar(30) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `Users_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `Role_Users` (`Users_id`),
@@ -110,6 +111,7 @@ CREATE TABLE `Role` (
 
 LOCK TABLES `Role` WRITE;
 /*!40000 ALTER TABLE `Role` DISABLE KEYS */;
+INSERT INTO `Role` VALUES (1, 'admin', 'asevue', 1);
 /*!40000 ALTER TABLE `Role` ENABLE KEYS */;
 UNLOCK TABLES;
 

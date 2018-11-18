@@ -16,15 +16,22 @@ public class PhoneNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
+    private int id;
 
     @Column(name = "number")
     private String number;
 
-    //@ManyToOne
-    //@JoinColumn(name = "user",
-     //       foreignKey = @ForeignKey(name = "")
-    //)
-   //private User user;
+    @ManyToOne
+    @JoinColumn(name = "Users_id",
+            foreignKey = @ForeignKey(name = "PhoneNumbers_Users")
+    )
+    private User user;
+
+    @OneToOne
+    @JoinColumn(name = "PhoneType_id",
+            foreignKey = @ForeignKey(name = "PhoneNumbers_PhoneType")
+    )
+    private PhoneType phoneType;
 
     /**
      * Instantiates a new PhoneNumber.
@@ -32,21 +39,45 @@ public class PhoneNumber {
     public PhoneNumber() {
     }
 
-    public String getPhoneNumber() {
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNumber() {
         return number;
     }
 
-    public void setPhoneNumber(String number) {
-
+    public void setNumber(String number) {
         this.number = number;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public PhoneType getPhoneType() {
+        return phoneType;
+    }
+
+    public void setPhoneType(PhoneType phoneType) {
+        this.phoneType = phoneType;
     }
 
     @Override
     public String toString() {
         return "PhoneNumber{" +
-                "phoneNumber='" + number + '\'' +
-                //", user=" + user +
+                "id=" + id +
+                ", number='" + number + '\'' +
+                ", user=" + user +
+                ", phoneType=" + phoneType +
                 '}';
     }
 
