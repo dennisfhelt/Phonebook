@@ -39,6 +39,11 @@ public class PhoneNumber {
     public PhoneNumber() {
     }
 
+    public PhoneNumber(String number, User user) {
+        this.number = number;
+        this.user = user;
+    }
+
     public int getId() {
         return id;
     }

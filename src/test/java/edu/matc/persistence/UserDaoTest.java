@@ -2,12 +2,10 @@ package edu.matc.persistence;
 
 import edu.matc.entity.PhoneNumber;
 import edu.matc.entity.User;
-import org.hibernate.boot.model.relational.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import javax.persistence.criteria.Order;
 import java.util.List;
+import edu.matc.testUtils.Database;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,11 +22,10 @@ public class UserDaoTest {
      */
     @BeforeEach
     void setUp() {
-
-        dao = new Dao(User.class);
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
+        dao = new Dao(User.class);
     }
 
     /**
@@ -55,20 +52,20 @@ public class UserDaoTest {
      * Verify successful insert of a order
      */
     @Test
-    void insertSuccess() {
+    void insertPhoneNumberSuccess() {
 
-        Dao userDao = new Dao();
-        User user = userDao.getById("1");
+        Dao userDao = new Dao(User.class);
+        User user = (User)dao.getById("1");
         PhoneNumber newPhoneNumber = new PhoneNumber("6080000000", user);
         user.addPhoneNumber(newPhoneNumber);
 
         int id = dao.insert(newPhoneNumber);
 
         assertNotEquals(0,id);
-        Order insertedOrder = dao.getById(id);
-        assertEquals("Plates", insertedOrder.getDescription());
-        assertNotNull(insertedOrder.getUser());
-        assertEquals("Joe", insertedOrder.getUser().getFirstName());
+        PhoneNumber insertedPhoneNumber = (PhoneNumber)dao.getById(id);
+        assertEquals("6080000000", insertedPhoneNumber.getNumber());
+        assertNotNull(insertedPhoneNumber.getUser());
+        assertEquals("Joe", insertedPhoneNumber.getUser().getFirstName());
         // Could continue comparing all values, but
         // it may make sense to use .equals()
         // TODO review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/orderguide/html_single/Hibernate_Order_Guide.html#mapping-model-pojo-equalshashcode
@@ -102,9 +99,9 @@ public class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<Order> orders = dao.getByPropertyEqual("number", "6080001111");
-        assertEquals(1, orders.size());
-        assertEquals(2, orders.get(0).getId());
+        List<PhoneNumber> phoneNumbers = dao.getByPropertyEqual("number", "6080001111");
+        assertEquals(1, phoneNumbers.size());
+        assertEquals(2, phoneNumbers.get(0).getId());
     }
 
     /**
