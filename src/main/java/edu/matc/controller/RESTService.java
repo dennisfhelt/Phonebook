@@ -10,12 +10,11 @@ import java.util.List;
 public class RESTService {
 
     @POST
-    @Path("/id")
 
-    public Response findId(@FormParam("id") int id) {
-        if(id == 0) {
+    public Response findId(@FormParam("value") String value, @FormParam("searchCriteria") String searchCriteria) {
+        Dao dao = new Dao(User.class);
+        if(value.isEmpty()) {
 
-            Dao dao = new Dao(User.class);
             List<User> users = dao.getAll();
             StringBuilder response = new StringBuilder();
             for(User user : users){
@@ -23,12 +22,29 @@ public class RESTService {
                         + " ID: " + user.getId() + "<br>");
             }
             return Response.status(200)
-                    .entity("Users <br> " + response)
+                    .entity("Users <br> " + response + " Search Criteria: " + searchCriteria)
                     .build();
         } else {
-            return Response.status(200)
-                    .entity(" You entered id: " + id)
-                    .build();
+            if(searchCriteria.contains("id")) {
+                User user = (User)dao.getById(searchCriteria);
+                return Response.status(200)
+                        .entity(" You entered Last Name: " + value + " Search Criteria: " + searchCriteria
+                                + "<br> First Name: " + user.getFirstName() + " Last Name: " + user.getLastName()
+                        + " ID: " + user.getId() + "<br>")
+                        .build();
+            } else {
+                List<User> users = dao.getByPropertyLike("lastName", value);
+                StringBuilder response = new StringBuilder();
+                for(User user : users){
+                    response.append("First Name: " + user.getFirstName() + " Last Name: " + user.getLastName()
+                            + " ID: " + user.getId() + "<br>");
+                }
+                return Response.status(200)
+                        .entity(" You entered Last Name: " + value + " Search Criteria: " + searchCriteria
+                                + "<br> Users: " + response)
+                        .build();
+            }
+
         }
     }
 }
