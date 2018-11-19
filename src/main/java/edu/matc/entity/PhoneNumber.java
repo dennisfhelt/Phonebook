@@ -35,8 +35,10 @@ public class PhoneNumber {
 
     /**
      * Instantiates a new PhoneNumber.
+     * @param number the phone number
+     * @param phoneType the phone type
      */
-    public PhoneNumber() {
+    public PhoneNumber(String number, PhoneType phoneType) {
     }
 
     public PhoneNumber(String number, User user) {

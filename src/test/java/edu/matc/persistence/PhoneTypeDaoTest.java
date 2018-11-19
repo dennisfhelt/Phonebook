@@ -1,8 +1,7 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.PhoneNumber;
-import edu.matc.entity.Role;
-import edu.matc.entity.User;
+import edu.matc.entity.PhoneType;
 import edu.matc.testUtils.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,13 +10,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class UserDaoTest {
+public class PhoneTypeDaoTest {
 
-/**
- * The dao test.
- */
+    /**
+     * The dao test.
+     */
     Dao dao;
-
 
     /**
      * Creating the dao.
@@ -27,39 +25,35 @@ public class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new Dao(User.class);
+        dao = new Dao(PhoneType.class);
     }
 
     /**
      * Verifies gets all orders successfully.
      */
     @Test
-    void getAllUsersSuccess() {
-        List<User> users = dao.getAll();
-        assertEquals(4, users.size());
+    void getAllPhoneTypesSuccess() {
+        List<PhoneType> phoneTypes = dao.getAll();
+        assertEquals(4, phoneTypes.size());
     }
-
 
     /**
      * Verifies a order is returned correctly based on id search
      */
     @Test
     void getByIdSuccess() {
-        User retrievedUser = (User)dao.getById(2);
-        assertNotNull(retrievedUser);
-        assertEquals(retrievedUser, dao.getById(2));
+        PhoneType retrievedPhoneType = (PhoneType)dao.getById(2);
+        assertNotNull(retrievedPhoneType);
+        assertEquals(retrievedPhoneType, dao.getById(2));
     }
 
-    /**
-     * Verify successful insert of a order
-     */
     @Test
-    void insertPhoneNumberSuccess() {
+    void insertWithPhoneNumberSuccess() {
 
-        Dao userDao = new Dao(User.class);
-        User user = (User)dao.getById(1);
-        PhoneNumber newPhoneNumber = new PhoneNumber("6080000000", user);
-        user.addPhoneNumber(newPhoneNumber);
+        Dao PhoneTypeDao = new Dao(PhoneType.class);
+        PhoneType phoneType = (PhoneType)dao.getById(1);
+        PhoneNumber newPhoneNumber = new PhoneNumber("6080000000", phoneType);
+        phoneType.addPhoneNumber(newPhoneNumber);
 
         int id = dao.insert(newPhoneNumber);
 
@@ -73,9 +67,8 @@ public class UserDaoTest {
         // TODO review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/orderguide/html_single/Hibernate_Order_Guide.html#mapping-model-pojo-equalshashcode
     }
 
-
     /**
-     * Verify successful delete of order
+     * Verify successful delete of PhoneType
      */
     @Test
     void deleteSuccess() {
@@ -83,12 +76,9 @@ public class UserDaoTest {
         assertNull(dao.getById(3));
     }
 
-    /**
-     * Verify successful update of order
-     */
     @Test
     void updateWithPhoneNumberSuccess() {
-        String phoneNumber = "6080001111";
+        String phoneNumber = "6080002222";
         PhoneNumber phoneNumberToUpdate = (PhoneNumber)dao.getById(3);
         phoneNumberToUpdate.setNumber(phoneNumber);
         dao.saveOrUpdate(phoneNumberToUpdate);
@@ -96,32 +86,6 @@ public class UserDaoTest {
         assertEquals(phoneNumberToUpdate, retrievedPhoneNumber);
     }
 
-    @Test
-    void updateWithRoleSuccess() {
-        String userRole = "Administrator";
-        Role roleToUpdate = (Role)dao.getById(3);
-        roleToUpdate.setRole(userRole);
-        dao.saveOrUpdate(roleToUpdate);
-        Role retrievedPhoneNumber = (Role)dao.getById(3);
-        assertEquals(roleToUpdate, retrievedPhoneNumber);
-    }
-
-    /**
-     * Verify successful get by property (equal match)
-     */
-    @Test
-    void getByPropertyEqualSuccess() {
-        List<User> users = dao.getByPropertyEqual("firstName", "Aseng");
-        assertEquals(1, users.size());
-        assertEquals(2, users.get(0).getId());
-    }
-
-    /**
-     * Verify successful get by property (like match)
-     */
-    @Test
-    void getByPropertyLikeSuccess() {
-        List<User> users = dao.getByPropertyLike("username", "rr");
-        assertEquals(2, users.size());
-    }
 }
+
+
