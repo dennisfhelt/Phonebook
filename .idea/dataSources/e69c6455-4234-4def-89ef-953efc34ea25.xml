@@ -58,7 +58,7 @@
     </column>
     <column id="23" parent="12" name="number">
       <Position>2</Position>
-      <DataType>varchar(11)|0</DataType>
+      <DataType>char(12)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="24" parent="12" name="Users_id">
