@@ -20,6 +20,7 @@
         <mapping class="edu.matc.entity.Role" />
         <mapping class="edu.matc.entity.Location" />
         <mapping class="edu.matc.entity.PhoneNumber" />
+        <mapping class="edu.matc.entity.PhoneType" />
 
     </session-factory>
 
