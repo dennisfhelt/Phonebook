@@ -96,7 +96,7 @@ DROP TABLE IF EXISTS `PhoneNumbers`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `PhoneNumbers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `number` varchar(11) NOT NULL,
+  `number` char(12) NOT NULL,
   `Users_id` int(11) NOT NULL,
   `PhoneType_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -113,7 +113,7 @@ CREATE TABLE `PhoneNumbers` (
 
 LOCK TABLES `PhoneNumbers` WRITE;
 /*!40000 ALTER TABLE `PhoneNumbers` DISABLE KEYS */;
-INSERT INTO `PhoneNumbers` VALUES (1,'6086289124',1,1),(2,'6083334568',2,1),(3,'6084445678',3,1),(4,'6085557895',4,2);
+INSERT INTO `PhoneNumbers` VALUES (1,'608-628-9124',1,1),(2,'608-333-4568',2,1),(3,'608-444-5678',3,1),(4,'608-555-7895',4,2);
 /*!40000 ALTER TABLE `PhoneNumbers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,5 +144,3 @@ LOCK TABLES `Role` WRITE;
 INSERT INTO `Role` VALUES (1, 'admin', 'asevue', 1);
 /*!40000 ALTER TABLE `Role` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
