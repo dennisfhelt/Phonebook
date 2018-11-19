@@ -34,9 +34,22 @@ public class PhoneNumber {
     private PhoneType phoneType;
 
     /**
-     * Instantiates a new PhoneNumber.
+     * Instantiates a new Phone number.
      */
     public PhoneNumber() {
+    }
+
+    /**
+     * Instantiates a new Phone number.
+     *
+     * @param number    the number
+     * @param user      the user
+     * @param phoneType the phone type
+     */
+    public PhoneNumber(String number, User user, PhoneType phoneType) {
+        this.number = number;
+        this.user = user;
+        this.phoneType = phoneType;
     }
 
     /**
@@ -44,11 +57,6 @@ public class PhoneNumber {
      *
      * @return the id
      */
-    public PhoneNumber(String number, User user) {
-        this.number = number;
-        this.user = user;
-    }
-
     public int getId() {
         return id;
     }
@@ -131,13 +139,14 @@ public class PhoneNumber {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PhoneNumber that = (PhoneNumber) o;
-        return Objects.equals(number, that.number);
-                //&& Objects.equals(user, that.user);
+        return id == that.id &&
+                Objects.equals(number, that.number) &&
+                Objects.equals(user, that.user) &&
+                Objects.equals(phoneType, that.phoneType);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(number);
+        return Objects.hash(id, number, user, phoneType);
     }
 }

@@ -3,6 +3,8 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Phone Type Class
@@ -58,9 +60,12 @@ public class PhoneType {
      *
      * @param type the type
      */
+
+
     public void setType(String type) {
         this.type = type;
     }
+
 
     @Override
     public String toString() {
