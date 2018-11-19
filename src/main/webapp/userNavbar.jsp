@@ -6,7 +6,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navItems">
             <ul class="navbar nav">
-                <li class="nav-item"><a href="#" class="nav-link">Log Out</a></li>
+                <li class="nav-item"><a href="logOut.jsp" class="nav-link">Log Out</a></li>
             </ul>
         </div>
     </nav>
