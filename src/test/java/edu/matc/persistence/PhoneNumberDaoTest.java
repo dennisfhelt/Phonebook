@@ -40,9 +40,9 @@ public class PhoneNumberDaoTest {
 
     @Test
     void getByIdSuccess() {
-        PhoneNumber retrievedPhoneNumber = (PhoneNumber) dao.getById(2);
+        PhoneNumber retrievedPhoneNumber = (PhoneNumber) dao.getById("2");
         assertNotNull(retrievedPhoneNumber);
-        assertEquals(retrievedPhoneNumber, dao.getById(2));
+        assertEquals(retrievedPhoneNumber, dao.getById("2"));
     }
 
     /**

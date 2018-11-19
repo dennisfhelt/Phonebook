@@ -93,13 +93,14 @@ public class PhoneNumber {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PhoneNumber that = (PhoneNumber) o;
-        return Objects.equals(number, that.number);
-                //&& Objects.equals(user, that.user);
+        return id == that.id &&
+                Objects.equals(number, that.number) &&
+                Objects.equals(user, that.user) &&
+                Objects.equals(phoneType, that.phoneType);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(number);
+        return Objects.hash(id, number, user, phoneType);
     }
 }

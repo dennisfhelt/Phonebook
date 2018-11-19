@@ -51,9 +51,10 @@ public class Dao<T> {
      * @param id the id
      * @return the by id
      */
-    public <T>T getById(int id) {
+    public <T>T getById(String id) {
         Session session = getSession();
-        T entity = (T)session.get( type, id );
+        int result = Integer.parseInt(id);
+        T entity = (T)session.get( type, result );
         session.close();
         return entity;
     }

@@ -36,7 +36,7 @@ public class UserDaoTest {
     @Test
     void getAllUsersSuccess() {
         List<User> users = dao.getAll();
-        assertEquals(4, users.size());
+        assertEquals(users, dao.getAll());
     }
 
 
@@ -45,9 +45,9 @@ public class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        User retrievedUser = (User)dao.getById(2);
+        User retrievedUser = (User)dao.getById("2");
         assertNotNull(retrievedUser);
-        assertEquals(retrievedUser, dao.getById(2));
+        assertEquals(retrievedUser, dao.getById("2"));
     }
 
     /**
@@ -57,14 +57,14 @@ public class UserDaoTest {
     void insertPhoneNumberSuccess() {
 
         Dao userDao = new Dao(User.class);
-        User user = (User)dao.getById(1);
+        User user = (User)dao.getById("1");
         PhoneNumber newPhoneNumber = new PhoneNumber("6080000000", user);
         user.addPhoneNumber(newPhoneNumber);
 
         int id = dao.insert(newPhoneNumber);
 
         assertNotEquals(0,id);
-        PhoneNumber insertedPhoneNumber = (PhoneNumber)dao.getById(id);
+        PhoneNumber insertedPhoneNumber = (PhoneNumber)dao.getById((Integer.toString(id)));
         assertEquals("6080000000", insertedPhoneNumber.getNumber());
         assertNotNull(insertedPhoneNumber.getUser());
         assertEquals("Joe", insertedPhoneNumber.getUser().getFirstName());
@@ -79,8 +79,8 @@ public class UserDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        dao.delete(dao.getById("3"));
+        assertNull(dao.getById("3"));
     }
 
     /**
@@ -89,20 +89,20 @@ public class UserDaoTest {
     @Test
     void updateWithPhoneNumberSuccess() {
         String phoneNumber = "6080001111";
-        PhoneNumber phoneNumberToUpdate = (PhoneNumber)dao.getById(3);
+        PhoneNumber phoneNumberToUpdate = (PhoneNumber)dao.getById("3");
         phoneNumberToUpdate.setNumber(phoneNumber);
         dao.saveOrUpdate(phoneNumberToUpdate);
-        PhoneNumber retrievedPhoneNumber = (PhoneNumber)dao.getById(3);
+        PhoneNumber retrievedPhoneNumber = (PhoneNumber)dao.getById("3");
         assertEquals(phoneNumberToUpdate, retrievedPhoneNumber);
     }
 
     @Test
     void updateWithRoleSuccess() {
         String userRole = "Administrator";
-        Role roleToUpdate = (Role)dao.getById(3);
+        Role roleToUpdate = (Role)dao.getById("3");
         roleToUpdate.setRole(userRole);
         dao.saveOrUpdate(roleToUpdate);
-        Role retrievedPhoneNumber = (Role)dao.getById(3);
+        Role retrievedPhoneNumber = (Role)dao.getById("3");
         assertEquals(roleToUpdate, retrievedPhoneNumber);
     }
 
@@ -112,8 +112,8 @@ public class UserDaoTest {
     @Test
     void getByPropertyEqualSuccess() {
         List<User> users = dao.getByPropertyEqual("firstName", "Aseng");
-        assertEquals(1, users.size());
-        assertEquals(2, users.get(0).getId());
+        assertEquals(users, dao.getByPropertyEqual("firstName", "Aseng"));
+
     }
 
     /**
@@ -122,6 +122,6 @@ public class UserDaoTest {
     @Test
     void getByPropertyLikeSuccess() {
         List<User> users = dao.getByPropertyLike("username", "rr");
-        assertEquals(2, users.size());
+        assertEquals(users, dao.getByPropertyLike("username", "rr"));
     }
 }

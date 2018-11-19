@@ -44,15 +44,15 @@ public class RoleDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Role retrievedRole = (Role) dao.getById(2);
+        Role retrievedRole = (Role) dao.getById("2");
         assertNotNull(retrievedRole);
-        assertEquals(retrievedRole, dao.getById(2));
+        assertEquals(retrievedRole, dao.getById("2"));
     }
 
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        dao.delete(dao.getById("3"));
+        assertNull(dao.getById("3"));
     }
 
     @Test

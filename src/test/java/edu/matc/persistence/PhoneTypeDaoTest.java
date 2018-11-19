@@ -42,23 +42,23 @@ public class PhoneTypeDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        PhoneType retrievedPhoneType = (PhoneType)dao.getById(2);
+        PhoneType retrievedPhoneType = (PhoneType)dao.getById("2");
         assertNotNull(retrievedPhoneType);
-        assertEquals(retrievedPhoneType, dao.getById(2));
+        assertEquals(retrievedPhoneType, dao.getById("2"));
     }
 
     @Test
     void insertWithPhoneNumberSuccess() {
 
         Dao PhoneTypeDao = new Dao(PhoneType.class);
-        PhoneType phoneType = (PhoneType)dao.getById(1);
+        PhoneType phoneType = (PhoneType)dao.getById("1");
         PhoneNumber newPhoneNumber = new PhoneNumber("6080000000", phoneType);
         phoneType.addPhoneNumber(newPhoneNumber);
 
         int id = dao.insert(newPhoneNumber);
 
         assertNotEquals(0,id);
-        PhoneNumber insertedPhoneNumber = (PhoneNumber)dao.getById(id);
+        PhoneNumber insertedPhoneNumber = (PhoneNumber)dao.getById(Integer.toString(id));
         assertEquals("6080000000", insertedPhoneNumber.getNumber());
         assertNotNull(insertedPhoneNumber.getUser());
         assertEquals("Joe", insertedPhoneNumber.getUser().getFirstName());
@@ -72,17 +72,17 @@ public class PhoneTypeDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        dao.delete(dao.getById("3"));
+        assertNull(dao.getById("3"));
     }
 
     @Test
     void updateWithPhoneNumberSuccess() {
         String phoneNumber = "6080002222";
-        PhoneNumber phoneNumberToUpdate = (PhoneNumber)dao.getById(3);
+        PhoneNumber phoneNumberToUpdate = (PhoneNumber)dao.getById("3");
         phoneNumberToUpdate.setNumber(phoneNumber);
         dao.saveOrUpdate(phoneNumberToUpdate);
-        PhoneNumber retrievedPhoneNumber = (PhoneNumber)dao.getById(3);
+        PhoneNumber retrievedPhoneNumber = (PhoneNumber)dao.getById("3");
         assertEquals(phoneNumberToUpdate, retrievedPhoneNumber);
     }
 

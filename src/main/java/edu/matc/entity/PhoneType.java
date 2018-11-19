@@ -22,8 +22,9 @@ public class PhoneType {
 
     private String type;
 
-    @OneToMany(mappedBy = "phoneType", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<PhoneNumber> numbers = new HashSet<>();
+    @OneToOne
+    @JoinColumn(name = "PhoneNumbers_id")
+    private PhoneNumber number;
 
     /**
      * Instantiates a new Phone type.
@@ -69,23 +70,6 @@ public class PhoneType {
         this.type = type;
     }
 
-    /**
-     * Gets numbers.
-     *
-     * @return the numbers
-     */
-    public Set<PhoneNumber> getNumbers() {
-        return numbers;
-    }
-
-    /**
-     * Sets numbers.
-     *
-     * @param numbers the numbers
-     */
-    public void setNumbers(Set<PhoneNumber> numbers) {
-        this.numbers = numbers;
-    }
 
     /**
      * Add phone number.
@@ -106,6 +90,13 @@ public class PhoneType {
         phoneNumber.setUser(null);
     }
 
+    public PhoneNumber getNumber() {
+        return number;
+    }
+
+    public void setNumber(PhoneNumber number) {
+        this.number = number;
+    }
 
     @Override
     public String toString() {

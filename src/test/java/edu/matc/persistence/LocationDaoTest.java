@@ -9,6 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class LocationDaoTest {
 
@@ -43,10 +44,34 @@ public class LocationDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Location retrievedLocation = (Location) dao.getById(2);
+        Location retrievedLocation = (Location) dao.getById("2");
         assertNotNull(retrievedLocation);
-        assertEquals(retrievedLocation, dao.getById(2));
+        assertEquals(retrievedLocation, dao.getById("2"));
     }
 
+    @Test
+    void deleteSuccess() {
+        dao.delete(dao.getById("3"));
+        assertNull(dao.getById("3"));
+    }
+
+    /**
+     * Verify successful get by property (equal match)
+     */
+    @Test
+    void getByPropertyEqualSuccess() {
+        List<Location> locations = dao.getByPropertyEqual("street", "3301 Portage Rd");
+        assertEquals(locations, dao.getByPropertyEqual("street", "3301 Portage Rd"));
+
+    }
+
+    /**
+     * Verify successful get by property (like match)
+     */
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<Location> locations = dao.getByPropertyLike("street", "rd");
+        assertEquals(locations, dao.getByPropertyLike("street", "rd"));
+    }
 
 }
