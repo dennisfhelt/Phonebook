@@ -44,6 +44,11 @@ public class PhoneNumber {
      *
      * @return the id
      */
+    public PhoneNumber(String number, User user) {
+        this.number = number;
+        this.user = user;
+    }
+
     public int getId() {
         return id;
     }
