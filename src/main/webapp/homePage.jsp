@@ -12,11 +12,12 @@
 <div class="container">
     <div class="title text-center">
         <h2>Welcome!</h2>
+        <hr />
     </div>
 
     <div class="row">
         <div class="col-sm-1"></div>
-        <div id="initialNav" class="col-sm-1 bg-yellow rounded">
+        <div id="initialNav" class="col-sm-1 bg-yellow rounded shadow-white">
             <nav class="navbar">
                 <ul class="navbar-nav w-100">
                     <li class="nav-item text-center">
@@ -53,11 +54,11 @@
 
         <div class="col-sm-1"></div>
 
-        <div class="col-sm-8 bg-yellow rounded shadow-white">
-            <h1>Testing</h1>
+        <div class="col-sm-6">
+            <h1 class="text-center">Form and Instructions</h1>
         </div>
 
-        <div class="col-sm-1"></div>
+        <div class="col-sm-3"></div>
     </div>
 </div>
 
