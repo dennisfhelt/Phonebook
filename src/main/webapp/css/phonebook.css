@@ -97,3 +97,19 @@ label {
 input[type="submit"] {
     font-size: 1em;
 }
+
+
+/*********************************************************************************/
+/* Home Page Styles                                                              */
+/*********************************************************************************/
+.shadow-white {
+    box-shadow: gray 4px 5px 6px;
+}
+
+#initialNav {
+    padding: 0em;
+}
+
+#initialNav .nav-link {
+    padding: 0em;
+}
