@@ -13,6 +13,24 @@
     <div class="title text-center">
         <h2>Welcome!</h2>
     </div>
+
+    <div class="row">
+        <div class="col-sm-2 bg-yellow">
+            TESTING
+        </div>
+
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-6 bg-yellow">
+            Testing
+        </div>
+
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-2 bg-yellow">
+            TESTING
+        </div>
+    </div>
 </div>
 
 <jsp:include page="footer.jsp" />
