@@ -24,7 +24,7 @@ Released   : 20131021
 				<li class="current_page_item"><a href="index.jsp" accesskey="1" title="">Homepage</a></li>
 				<li><a href="#" accesskey="2" title="">About</a></li>
 				<li><a href="#" accesskey="3" title="">Contact Us</a></li>
-				<li><a href="search.jsp" accesskey="4" title="">API</a></li>
+				<li><a href="#" accesskey="4" title="">API</a></li>
 			</ul>
 		</div>
 		<div id="logo">

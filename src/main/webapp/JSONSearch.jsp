@@ -15,17 +15,17 @@
     </div>
 
     <h3>Please Select a REST service</h3>
-    <a href="JSONSearch.jsp"><p>Click Here for JSON</p></a>
-    <form id="restServiceForm" class="row" action="application/text" method="post">
+    <a href="homePage.jsp"><p>Click Here for Plain Text</p></a>
+    <form id="restServiceForm" class="row" action="application/json" method="post">
         <div class="form-group col-sm-9">
-            <label for="searchCriteria">Search By Field:</label>
+            <label for="lastName">Last Name</label>
             <input type="radio" name="searchCriteria" id="lastName" value="lastName" checked="checked">
-            <span>Last Name</span>
-            <input type="radio" name="searchCriteria" id="id" value="id"><span>ID</span><br>
+            <label for="id">Id:</label>
+            <input type="radio" name="searchCriteria" id="id" value="id"><br>
         </div>
         <div class="form-group col-sm-12">
             <label>Search Value:</label>
-            <input type="text" class="text form-control" name="value"  />
+            <input type="text" class="text form-control" name="value" />
         </div>
         <input type="submit" value="REST service"/><br><br>
     </form>
