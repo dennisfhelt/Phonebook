@@ -102,11 +102,10 @@ input[type="submit"] {
 /*********************************************************************************/
 /* Home Page Styles                                                              */
 /*********************************************************************************/
+
 hr {
+    border-color: white;
     color: white;
-}
-.shadow-white {
-    box-shadow: gray 4px 5px 6px;
 }
 
 #initialNav {
@@ -115,4 +114,8 @@ hr {
 
 #initialNav .nav-link {
     padding: 0em;
+}
+
+h5 {
+    color: rgba(255,255,255,.6);
 }

@@ -12,24 +12,24 @@
 <div class="container">
     <div class="title text-center">
         <h2>Welcome!</h2>
-        <hr />
+        <hr /><br />
     </div>
 
     <div class="row">
         <div class="col-sm-1"></div>
-        <div id="initialNav" class="col-sm-1 bg-yellow rounded shadow-white">
+        <div id="initialNav" class="col-sm-1 bg-yellow rounded">
             <nav class="navbar">
                 <ul class="navbar-nav w-100">
                     <li class="nav-item text-center">
-                        <a class="nav-link font-weight-bold" href="#">A</a>
-                        <a class="nav-link font-weight-bold" href="#">B</a>
-                        <a class="nav-link font-weight-bold" href="#">C</a>
-                        <a class="nav-link font-weight-bold" href="#">D</a>
-                        <a class="nav-link font-weight-bold" href="#">E</a>
-                        <a class="nav-link font-weight-bold" href="#">F</a>
-                        <a class="nav-link font-weight-bold" href="#">G</a>
-                        <a class="nav-link font-weight-bold" href="#">H</a>
-                        <a class="nav-link font-weight-bold" href="#">I</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=A">A</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=B">B</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=C">C</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=D">D</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=E">E</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=F">F</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=G">G</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=H">H</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=I">I</a>
                         <a class="nav-link font-weight-bold" href="#">J</a>
                         <a class="nav-link font-weight-bold" href="#">K</a>
                         <a class="nav-link font-weight-bold" href="#">L</a>
@@ -54,8 +54,34 @@
 
         <div class="col-sm-1"></div>
 
-        <div class="col-sm-6">
-            <h1 class="text-center">Form and Instructions</h1>
+        <div class="col-sm-6 text-center">
+            <h3>To use this REST service:</h3>
+            <br />
+
+            <h5>Select a letter to view all users whose last name begins
+                with the selected letter.
+                <br />
+                Or enter the last name / id below to find a specific
+                user.</h5>
+            <br />
+            <form action="application/users" method="post">
+                <input type="text" class="text form-control" name="value" required="required" />
+
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="searchCriteria" value="lastName" />Last Name
+                    </label>
+                </div>
+                &nbsp;&nbsp;&nbsp;
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="searchCriteria" value="id" />Id
+                    </label>
+                </div>
+
+                <br />
+                <input type="submit" class="button" value="REST service" />
+            </form>
         </div>
 
         <div class="col-sm-3"></div>
