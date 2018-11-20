@@ -148,6 +148,23 @@ public class Dao<T> {
         return entity;
     }
 
+    public List<T> getByPropertyBeginsWith(String propertyName, String value) {
+        Session session = getSession();
+
+        logger.debug("Searching for user with {} = {}",  propertyName, value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery( type );
+        Root<T> root = query.from( type );
+        Expression<String> propertyPath = root.get(propertyName);
+
+        query.where(builder.like(propertyPath,value + "%"));
+
+        List<T> entity = session.createQuery( query ).getResultList();
+        session.close();
+        return entity;
+    }
+
     /**
      * Returns an open session from the SessionFactory
      * @return session

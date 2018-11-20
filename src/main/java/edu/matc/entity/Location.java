@@ -16,7 +16,6 @@ public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
-
     private int id;
 
     @Column(name = "street")

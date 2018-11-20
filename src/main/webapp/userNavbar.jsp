@@ -6,7 +6,16 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navItems">
             <ul class="navbar nav">
-                <li class="nav-item"><a href="#" class="nav-link">Log Out</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <i class="icon icon-user"></i>
+                    </a>
+                    <div class="dropdown-menu bg-yellow">
+                        <a href="#" class="dropdown-item nav-link">User Guide</a>
+                        <a href="#" class="dropdown-item nav-link">Edit Profile</a>
+                        <a href="logOut.jsp" class="dropdown-item nav-link">Log Out</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>

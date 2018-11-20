@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,6 +14,8 @@
 <div class="container" id="signUp">
     <div class="title text-center">
         <h2>Create a New Account:</h2>
+		<p class="errorMessage">${errorMessage}</p>
+		<c:remove var="errorMessage" />
     </div>
 
     <form id="signUpForm" class="row" action="addUser" method="post">
@@ -106,15 +110,15 @@
 		</div>
 		<div class="form-group col-sm-4">
 			<label for="homeNumber">&nbsp;Home Phone:</label>
-        	<input type="text" class="text form-control" name="homeNumber" placeholder="###-###-####" />
+        	<input type="text" class="text form-control" name="homeNumber" placeholder="### - ### - ####" />
 		</div>
 		<div class="form-group col-sm-4">
-			<label for="cellNumber">&nbsp;Cell Number:</label>
-        	<input type="text" class="text form-control" name="cellNumber" placeholder="###-###-####" />
+			<label for="cellNumber">&nbsp;Cell Phone:</label>
+        	<input type="text" class="text form-control" name="cellNumber" placeholder="### - ### - ####" />
 		</div>
 		<div class="form-group col-sm-4">
-			<label for="workNumber">&nbsp;Work Number:</label>
-        	<input type="text" class="text form-control" name="workNumber" placeholder="###-###-####" />
+			<label for="workNumber">&nbsp;Work Phone:</label>
+        	<input type="text" class="text form-control" name="workNumber" placeholder="### - ### - ####" />
 		</div>
 
 		<div class="form-group col-sm-12">

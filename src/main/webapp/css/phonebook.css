@@ -97,3 +97,25 @@ label {
 input[type="submit"] {
     font-size: 1em;
 }
+
+
+/*********************************************************************************/
+/* Home Page Styles                                                              */
+/*********************************************************************************/
+
+hr {
+    border-color: white;
+    color: white;
+}
+
+#initialNav {
+    padding: 0em;
+}
+
+#initialNav .nav-link {
+    padding: 0em;
+}
+
+h5 {
+    color: rgba(255,255,255,.6);
+}

@@ -13,3 +13,4 @@ DELETE FROM Role;
 INSERT INTO `Role` VALUES (1, 'admin', 'asevue', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
+
