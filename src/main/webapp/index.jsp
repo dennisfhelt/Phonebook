@@ -19,6 +19,14 @@ Released   : 20131021
 <body>
 <div id="header-wrapper">
 	<div id="header" class="container">
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="index.jsp" accesskey="1" title="">Homepage</a></li>
+				<li><a href="#" accesskey="2" title="">About</a></li>
+				<li><a href="#" accesskey="3" title="">Contact Us</a></li>
+				<li><a href="#" accesskey="4" title="">API</a></li>
+			</ul>
+		</div>
 		<div id="logo">
 			<h1><a href="index.jsp">Phonebook</a></h1>
 		</div>

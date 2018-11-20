@@ -86,6 +86,22 @@
 
         <div class="col-sm-3"></div>
     </div>
+
+    <h3>Please Select a REST service</h3>
+    <a href="JSONSearch.jsp"><p>Click Here for JSON</p></a>
+    <form id="restServiceForm" class="row" action="application/text" method="post">
+        <div class="form-group col-sm-9">
+            <label for="searchCriteria">Search By Field:</label>
+            <input type="radio" name="searchCriteria" id="lastName" value="lastName" checked="checked">
+            <span>Last Name</span>
+            <input type="radio" name="searchCriteria" id="id" value="id"><span>ID</span><br>
+        </div>
+        <div class="form-group col-sm-12">
+            <label>Search Value:</label>
+            <input type="text" class="text form-control" name="value"  />
+        </div>
+        <input type="submit" value="REST service"/><br><br>
+    </form>
 </div>
 
 <br /><br /><br />
