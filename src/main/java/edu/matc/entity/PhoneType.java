@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -21,10 +22,6 @@ public class PhoneType {
     private int id;
 
     private String type;
-
-    @OneToOne
-    @JoinColumn(name = "PhoneNumbers_id")
-    private PhoneNumber number;
 
     /**
      * Instantiates a new Phone type.
@@ -70,32 +67,18 @@ public class PhoneType {
         this.type = type;
     }
 
-
-    /**
-     * Add phone number.
-     *
-     * @param phoneNumber the phone number
-     */
-    public void addPhoneNumber(PhoneNumber phoneNumber) {
-        numbers.add(phoneNumber);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PhoneType phoneType = (PhoneType) o;
+        return id == phoneType.id &&
+                Objects.equals(type, phoneType.type);
     }
 
-    /**
-     * Remove phone number.
-     *
-     * @param phoneNumber the phone number
-     */
-    public void removePhoneNumber(PhoneNumber phoneNumber) {
-        numbers.remove(phoneNumber);
-        phoneNumber.setUser(null);
-    }
-
-    public PhoneNumber getNumber() {
-        return number;
-    }
-
-    public void setNumber(PhoneNumber number) {
-        this.number = number;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, type);
     }
 
     @Override

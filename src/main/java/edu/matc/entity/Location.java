@@ -4,6 +4,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * Represents a Location entry
@@ -139,6 +140,23 @@ public class Location {
     */
     public void setStatePostal(String statePostal) {
         this.statePostal = statePostal;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return id == location.id &&
+                Objects.equals(streetAddress, location.streetAddress) &&
+                Objects.equals(city, location.city) &&
+                Objects.equals(state, location.state) &&
+                Objects.equals(statePostal, location.statePostal);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, streetAddress, city, state, statePostal);
     }
 
     @Override

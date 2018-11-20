@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static edu.matc.testUtils.Database.getInstance;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -24,7 +25,7 @@ public class RoleDaoTest {
      */
     @BeforeEach
     void setUp() {
-        Database database = Database.getInstance();
+        Database database = getInstance();
         database.runSQL("cleandb.sql");
 
         dao = new Dao(Role.class);
@@ -35,8 +36,8 @@ public class RoleDaoTest {
      */
     @Test
     void getAllRolesSuccess() {
-        List<Role> users = dao.getAll();
-        assertEquals(4, users.size());
+        List<Role> role = dao.getAll();
+        assertEquals(1, role.size());
     }
 
     /**
@@ -44,22 +45,22 @@ public class RoleDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Role retrievedRole = (Role) dao.getById("2");
+        Role retrievedRole = (Role) dao.getById(1);
         assertNotNull(retrievedRole);
-        assertEquals(retrievedRole, dao.getById("2"));
-    }
-
-    @Test
-    void deleteSuccess() {
-        dao.delete(dao.getById("3"));
-        assertNull(dao.getById("3"));
+        assertEquals(retrievedRole, dao.getById(1));
     }
 
     @Test
     void getByPropertyEqualSuccess() {
-        List<Role> roles = dao.getByPropertyEqual("role", "User");
+        List<Role> roles = dao.getByPropertyEqual("role", "admin");
         assertEquals(1, roles.size());
-        assertEquals(2, roles.get(0).getId());
+        assertEquals(1, roles.get(0).getId());
+    }
+
+    @Test
+    void deleteSuccess() {
+        dao.delete(dao.getById(1));
+        assertNull(dao.getById(1));
     }
 
 }

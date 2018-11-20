@@ -28,7 +28,7 @@ public class SearchUser extends HttpServlet {
         Dao locationDao = new Dao(Location.class);
         Dao numberDao = new Dao(PhoneNumber.class);
         if (req.getParameter("submit").equals("search")) {
-            req.setAttribute("user", dao.getById((req.getParameter("searchTerm"))));
+            req.setAttribute("user", dao.getById(Integer.parseInt(req.getParameter("searchTerm"))));
         } else {
             req.setAttribute("users", dao.getAll());
             req.setAttribute("locations", locationDao.getAll());

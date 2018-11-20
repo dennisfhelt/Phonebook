@@ -54,12 +54,14 @@ public class User {
      *
      * @param firstName   the first name
      * @param lastName    the last name
-     * @param userName    the user name
-     * @param dateOfBirth the date of birth
+     * @param username    the user name
+     * @param password    the date of birth
      */
-    public User(String firstName, String lastName, String userName, LocalDate dateOfBirth) {
+    public User(String firstName, String lastName, String username, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.username = username;
+        this.password = password;
     }
 
 
@@ -213,7 +215,9 @@ public class User {
      * @param phoneNumber the phone number
      */
     public void addPhoneNumber(PhoneNumber phoneNumber) {
+
         numbers.add(phoneNumber);
+        phoneNumber.setUser(this);
     }
 
     /**

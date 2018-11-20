@@ -15,10 +15,8 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
-
-    private String role;
-
     private String username;
+    private String role;
 
     @ManyToOne
     @JoinColumn(name = "Users_id",
@@ -128,15 +126,15 @@ public class Role {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Role role = (Role) o;
-        return id == role.id &&
-                Objects.equals(role, role.role);
+        Role role1 = (Role) o;
+        return id == role1.id &&
+                Objects.equals(username, role1.username) &&
+                Objects.equals(role, role1.role) &&
+                Objects.equals(user, role1.user);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id,  role);
+        return Objects.hash(id, username, role, user);
     }
-
 }

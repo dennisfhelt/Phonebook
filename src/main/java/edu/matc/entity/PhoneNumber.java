@@ -35,15 +35,14 @@ public class PhoneNumber {
 
     /**
      * Instantiates a new PhoneNumber.
-     * @param number the phone number
-     * @param phoneType the phone type
      */
-    public PhoneNumber(String number, PhoneType phoneType) {
+    public PhoneNumber() {
     }
 
-    public PhoneNumber(String number, User user) {
+    public PhoneNumber(String number, User user, PhoneType phoneType) {
         this.number = number;
         this.user = user;
+        this.phoneType = phoneType;
     }
 
     public int getId() {
@@ -94,9 +93,7 @@ public class PhoneNumber {
         if (o == null || getClass() != o.getClass()) return false;
         PhoneNumber that = (PhoneNumber) o;
         return id == that.id &&
-                Objects.equals(number, that.number) &&
-                Objects.equals(user, that.user) &&
-                Objects.equals(phoneType, that.phoneType);
+                Objects.equals(number, that.number);
     }
 
     @Override
