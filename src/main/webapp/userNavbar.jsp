@@ -11,7 +11,7 @@
                         <i class="icon icon-user"></i>
                     </a>
                     <div class="dropdown-menu bg-yellow">
-                        <a href="#" class="dropdown-item nav-link">User Guide</a>
+                        <a href="userGuide.jsp" class="dropdown-item nav-link">User Guide</a>
                         <a href="#" class="dropdown-item nav-link">Edit Profile</a>
                         <a href="logOut.jsp" class="dropdown-item nav-link">Log Out</a>
                     </div>

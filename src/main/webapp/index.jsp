@@ -19,14 +19,6 @@ Released   : 20131021
 <body>
 <div id="header-wrapper">
 	<div id="header" class="container">
-		<div id="menu">
-			<ul>
-				<li class="current_page_item"><a href="index.jsp" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">About</a></li>
-				<li><a href="#" accesskey="3" title="">Contact Us</a></li>
-				<li><a href="#" accesskey="4" title="">API</a></li>
-			</ul>
-		</div>
 		<div id="logo">
 			<h1><a href="index.jsp">Phonebook</a></h1>
 		</div>
@@ -50,7 +42,8 @@ Released   : 20131021
 	<div class="row">
 		<div class="title col-sm-4">
 			<h2 class="icon icon-search"></h2>
-			<p>Search for people you know using their name, phone number, or zip code.</p>
+			<p>Search for people you know using their last name or unique identifier. Or, select any letter of the alphabet
+			   to see all users whose last name begins with the selected letter.</p>
 		</div>
 
 		<div class="title col-sm-4">
