@@ -30,23 +30,23 @@
                         <a class="nav-link font-weight-bold" href="application/users?initial=G">G</a>
                         <a class="nav-link font-weight-bold" href="application/users?initial=H">H</a>
                         <a class="nav-link font-weight-bold" href="application/users?initial=I">I</a>
-                        <a class="nav-link font-weight-bold" href="#">J</a>
-                        <a class="nav-link font-weight-bold" href="#">K</a>
-                        <a class="nav-link font-weight-bold" href="#">L</a>
-                        <a class="nav-link font-weight-bold" href="#">M</a>
-                        <a class="nav-link font-weight-bold" href="#">N</a>
-                        <a class="nav-link font-weight-bold" href="#">O</a>
-                        <a class="nav-link font-weight-bold" href="#">P</a>
-                        <a class="nav-link font-weight-bold" href="#">Q</a>
-                        <a class="nav-link font-weight-bold" href="#">R</a>
-                        <a class="nav-link font-weight-bold" href="#">S</a>
-                        <a class="nav-link font-weight-bold" href="#">T</a>
-                        <a class="nav-link font-weight-bold" href="#">U</a>
-                        <a class="nav-link font-weight-bold" href="#">V</a>
-                        <a class="nav-link font-weight-bold" href="#">W</a>
-                        <a class="nav-link font-weight-bold" href="#">X</a>
-                        <a class="nav-link font-weight-bold" href="#">Y</a>
-                        <a class="nav-link font-weight-bold" href="#">Z</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=J">J</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=K">K</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=L">L</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=M">M</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=N">N</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=O">O</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=P">P</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=Q">Q</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=R">R</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=S">S</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=T">T</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=U">U</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=V">V</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=W">W</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=X">X</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=Y">Y</a>
+                        <a class="nav-link font-weight-bold" href="application/users?initial=Z">Z</a>
                     </li>
                 </ul>
             </nav>
@@ -64,7 +64,7 @@
                 Or enter the last name / id below to find a specific
                 user.</h5>
             <br />
-            <form action="application/users" method="post">
+            <form action="application/text" method="post">
                 <input type="text" class="text form-control" name="value" required="required" />
 
                 <div class="form-check-inline">
