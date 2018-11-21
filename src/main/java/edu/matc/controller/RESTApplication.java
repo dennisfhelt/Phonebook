@@ -25,7 +25,7 @@ package edu.matc.controller;
          HashSet result = new HashSet<Class<?>>();
          result.add(RESTService.class );
          result.add(RESTServiceHTML.class);
-         //result.add(RESTServiceJSON.class);
+         result.add(RESTServiceJSON.class);
          return result;
      }
 
