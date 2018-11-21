@@ -14,22 +14,41 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
-import java.util.List;
 
+/**
+ * The type Rest service json.
+ */
 @Path("/json")
 public class RESTServiceJSON {
 
+    /**
+     * The Dao.
+     */
     Dao dao = new Dao(User.class);
+    /**
+     * The Phone.
+     */
     Dao phone = new Dao(PhoneNumber.class);
+    /**
+     * The Address.
+     */
     Dao address = new Dao(Location.class);
 
+    /**
+     * Find json response.
+     *
+     * @param value          the value
+     * @param searchCriteria the search criteria
+     * @return the response
+     */
     @POST
     @Produces("application/json")
 
     public Response findJSON(@FormParam("value") String value, @FormParam("searchCriteria") String searchCriteria) {
         ObjectMapper mapper = new ObjectMapper();
+        RESTCreator create = new RESTCreator();
         String jsonResponse="";
-        String response = getClasses(searchCriteria, value);
+        String response = create.getClasses(searchCriteria, value);
 
         try {
 
@@ -47,31 +66,4 @@ public class RESTServiceJSON {
                 .entity(jsonResponse)
                 .build();
     }
-    public String getClasses(String searchCriteria, String value) {
-
-        StringBuilder response = new StringBuilder();
-        if (value.isEmpty()) {
-
-            List<User> users = dao.getAll();
-            for (User user : users) {
-                response.append("First Name: " + user.getFirstName() + " Last Name: " + user.getLastName()
-                        + " ID: " + user.getId() + " Phone Numbers: " + user.getNumbers() + "<br>");
-            }
-        } else {
-            if(searchCriteria.contains("id")) {
-                User user = (User)dao.getById(Integer.parseInt(value));
-
-                response.append("<br> First Name: " + user.getFirstName() + " Last Name: " + user.getLastName()
-                        + " ID: " + user.getId() + " Phone Numbers: " + user.getNumbers() + "<br>");
-            } else {
-                List<User> users = dao.getByPropertyLike("lastName", value);
-                for (User user : users) {
-                    response.append("First Name: " + user.getFirstName() + " Last Name: " + user.getLastName()
-                            + " ID: " + user.getId() + " Phone Numbers: " + user.getNumbers() + "<br>");
-                }
-            }
-        }
-        return response.toString();
-    }
-
 }
