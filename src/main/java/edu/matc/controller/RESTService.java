@@ -29,7 +29,7 @@ public class RESTService {
             }
         } else {
             if(searchCriteria.contains("id")) {
-                User user = (User)dao.getById(value);
+                User user = (User)dao.getById(Integer.parseInt(value));
                 response.append("<br> First Name: " + user.getFirstName() + " Last Name: " + user.getLastName()
                         + " ID: " + user.getId() + "<br>");
             } else {

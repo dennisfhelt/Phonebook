@@ -77,12 +77,12 @@ public class UserDaoTest {
     /**
      * Verify successful delete of order
      */
-    /* @Test
+    @Test
     void deleteSuccess() {
         dao.delete(dao.getById(3));
         assertNull(dao.getById(3));
     }
-    */
+
     /**
      * Verify successful update of order
      */

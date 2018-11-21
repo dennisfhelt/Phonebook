@@ -38,9 +38,12 @@ public class Location {
     /**
      * Instantiates a new Location.
      *
-     * @param id            the id
+     * @param id            the id*
      * @param streetAddress the street address
+     * @param city          the city
+     * @param state         the state
      * @param statePostal   the state postal
+     *
      */
     public Location(int id, String streetAddress, String city, String state, String statePostal) {
         this.id = id;

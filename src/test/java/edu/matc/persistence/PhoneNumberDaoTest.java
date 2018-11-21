@@ -50,7 +50,7 @@ public class PhoneNumberDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<PhoneNumber> phoneNumbers = dao.getByPropertyEqual("number", "6084445678");
+        List<PhoneNumber> phoneNumbers = dao.getByPropertyEqual("number", "608-444-5678");
         assertEquals(1, phoneNumbers.size());
         assertEquals(3, phoneNumbers.get(0).getId());
     }

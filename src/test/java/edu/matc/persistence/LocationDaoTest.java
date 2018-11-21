@@ -49,12 +49,6 @@ public class LocationDaoTest {
         assertEquals(retrievedLocation, dao.getById(2));
     }
 
-    @Test
-    void deleteSuccess() {
-        dao.delete(dao.getById(1));
-        assertNull(dao.getById(1));
-    }
-
     /**
      * Verify successful get by property (equal match)
      */

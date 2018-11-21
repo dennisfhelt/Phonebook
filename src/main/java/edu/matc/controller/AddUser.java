@@ -95,7 +95,7 @@ public class AddUser extends HttpServlet {
                 PhoneNumber homePhone = new PhoneNumber();
                 homePhone.setNumber(homeNumber);
                 homePhone.setUser(user);
-                homePhone.setPhoneType((PhoneType)phoneTypeDao.getById("2"));
+                homePhone.setPhoneType((PhoneType)phoneTypeDao.getById(2));
                 phoneNumberDao.insert(homePhone);
             }
 
@@ -103,7 +103,7 @@ public class AddUser extends HttpServlet {
                 PhoneNumber cellPhone = new PhoneNumber();
                 cellPhone.setNumber(cellNumber);
                 cellPhone.setUser(user);
-                cellPhone.setPhoneType((PhoneType)phoneTypeDao.getById("3"));
+                cellPhone.setPhoneType((PhoneType)phoneTypeDao.getById(3));
                 phoneNumberDao.insert(cellPhone);
             }
 
@@ -111,7 +111,7 @@ public class AddUser extends HttpServlet {
                 PhoneNumber workPhone = new PhoneNumber();
                 workPhone.setNumber(workNumber);
                 workPhone.setUser(user);
-                workPhone.setPhoneType((PhoneType)phoneTypeDao.getById("1"));
+                workPhone.setPhoneType((PhoneType)phoneTypeDao.getById(1));
                 phoneNumberDao.insert(workPhone);
             }
 
