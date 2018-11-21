@@ -37,7 +37,7 @@ public class RESTServiceJSON {
             }
         } else {
             if (searchCriteria.contains("id")) {
-                User user = (User) dao.getById(value);
+                User user = (User) dao.getById(Integer.parseInt(value));
                 array.add("<br> First Name: " + user.getFirstName() + " Last Name: " + user.getLastName()
                         + " ID: " + user.getId() + " Phone Numbers: " + user.getNumbers() + "Address: "
                         + user.getLocation() + "<br>");
