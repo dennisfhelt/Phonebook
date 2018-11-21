@@ -82,7 +82,7 @@
                 <br />
                 <input type="submit" class="button" value="REST service" />
             </form>
-            <a href="JSONSearch.jsp"><p>Click Here for JSON</p></a>
+            <a href="homePage.jsp"><p>Click Here for Plain Text</p></a>
         </div>
 
 
