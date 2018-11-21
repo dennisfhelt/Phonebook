@@ -72,7 +72,7 @@ public class RESTServiceHTML {
         }
 
         output += "<br /><br />";
-        output += "<h5><a href=\"/phonebook/homePage.jsp\">&lt;&lt; Back to Search Page</a></h5>";
+        output += "<h5><a href=\"/homePage.jsp\">&lt;&lt; Back to Search Page</a></h5>";
         output += "</body>";
         output += "</html>";
 
