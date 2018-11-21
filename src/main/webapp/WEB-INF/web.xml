@@ -31,6 +31,9 @@
     <web-resource-collection>
       <web-resource-name>RequiresUserRole</web-resource-name>
       <url-pattern>/homePage.jsp</url-pattern>
+      <url-pattern>/JSONSearch.jsp</url-pattern>
+      <url-pattern>/userGuide.jsp</url-pattern>
+      <url-pattern>/application/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
