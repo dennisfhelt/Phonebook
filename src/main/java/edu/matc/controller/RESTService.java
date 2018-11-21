@@ -66,30 +66,4 @@ public class RESTService {
         return response.toString();
     }
 
-    @GET
-    @Produces("text/html")
-    public void findUserByLetter(
-            @QueryParam("initial") String initial,
-            @Context HttpServletRequest request,
-            @Context HttpServletResponse response) throws Exception {
-
-        HttpSession session = request.getSession();
-        String errorMessage = "";
-        Boolean usersFound = true;
-
-        Dao userDao = new Dao(User.class);
-        List<User> users = userDao.getByPropertyBeginsWith("lastName", initial);
-
-        if (users.size() < 1) {
-            errorMessage = "Sorry, there are no users with a last name beginning with '" + initial + "'";
-            usersFound = false;
-        }
-
-        session.setAttribute("errorMessage", errorMessage);
-        session.setAttribute("usersFound", usersFound);
-        session.setAttribute("users", users);
-
-        request.getRequestDispatcher("/searchResults.jsp").forward(request, response);
-    }
-
 }

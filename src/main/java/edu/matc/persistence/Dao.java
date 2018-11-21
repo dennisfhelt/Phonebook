@@ -148,6 +148,13 @@ public class Dao<T> {
         return entity;
     }
 
+    /**
+     * Gets by property begins with.
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property begins with
+     */
     public List<T> getByPropertyBeginsWith(String propertyName, String value) {
         Session session = getSession();
 
