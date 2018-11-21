@@ -29,7 +29,7 @@ public class RESTService {
 
         return Response.status(200)
                 .entity(" You entered search Criteria: " + searchCriteria + " for value " + value
-                        + "<br> Users: " + response)
+                        + " Users: " + response)
                 .build();
     }
 
