@@ -32,10 +32,10 @@ public class SearchUser extends HttpServlet {
         } else {
             req.setAttribute("users", dao.getAll());
             req.setAttribute("locations", locationDao.getAll());
-            //req.setAttribute("numbers", numberDao.getAll());
+            req.setAttribute("numbers", numberDao.getAll());
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("searchResults.jsp");
         dispatcher.forward(req, resp);
     }
 }

@@ -43,9 +43,21 @@ Released   : 20131021
     <a href="/phonebook/homePage.jsp">&lt;Back to Search</a>
     <br /><br />
 
+    <p class="errorMessage">${errorMessage}</p>
+    <c:remove var="errorMessage" />
+
     <c:choose>
-        <c:when test="${usersFound == false}">
-            <p id="error">${errorMessage}</p>
+        <c:when test="${user!=null}">
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.firstName} </td>
+                <td>${user.lastName}</td>
+            </tr>
         </c:when>
 
         <c:otherwise>

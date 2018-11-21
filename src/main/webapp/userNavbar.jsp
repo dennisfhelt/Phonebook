@@ -12,7 +12,8 @@
                     </a>
                     <div class="dropdown-menu bg-yellow">
                         <a href="#" class="dropdown-item nav-link">User Guide</a>
-                        <a href="#" class="dropdown-item nav-link">Edit Profile</a>
+                        <a href="delete.jsp" class="dropdown-item nav-link">Delete User</a>
+                        <a href="search.jsp" class="dropdown-item nav-link">Search User</a>
                         <a href="logOut.jsp" class="dropdown-item nav-link">Log Out</a>
                     </div>
                 </li>

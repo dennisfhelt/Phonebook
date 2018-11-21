@@ -13,11 +13,23 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+/**
+ * The type Rest service html.
+ */
 @Path("/users")
 public class RESTServiceHTML {
 
+    /**
+     * The User dao.
+     */
     Dao userDao = new Dao(User.class);
 
+    /**
+     * Find user by letter response.
+     *
+     * @param initial the initial
+     * @return the response
+     */
     @GET
     @Produces("text/html")
     public Response findUserByLetter(@QueryParam("initial") String initial) {
