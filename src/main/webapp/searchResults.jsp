@@ -40,7 +40,7 @@ Released   : 20131021
 
     <br /><br />
     <h1>Search Results:</h1>
-    <a href="/phonebook/homePage.jsp">&lt;Back to Search</a>
+    <a href="homePage.jsp">&lt;Back to Search</a>
     <br /><br />
 
     <p class="errorMessage">${errorMessage}</p>
