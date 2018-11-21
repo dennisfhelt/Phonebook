@@ -22,9 +22,10 @@ package edu.matc.controller;
      //The method returns a non-empty collection with classes, that must be included in the published JAX-RS application
      @Override
      public Set<Class<?>> getClasses() {
-         HashSet h = new HashSet<Class<?>>();
-         h.add(RESTService.class );
-         return h;
+         HashSet result = new HashSet<Class<?>>();
+         result.add(RESTService.class );
+         result.add(RESTServiceJSON.class);
+         return result;
      }
 
  }
