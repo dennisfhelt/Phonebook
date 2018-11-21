@@ -20,12 +20,12 @@
 		font-size: 300;
 	}
 
-	p, ol, ul
+	p, ol
 	{
 		margin-top: 0;
 	}
 
-	ol, ul
+	ol
 	{
 		padding: 0;
 		list-style: none;
